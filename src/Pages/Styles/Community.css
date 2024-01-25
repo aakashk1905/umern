@@ -14,8 +14,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  width:40vw;
-  height:100vh;
+  width: 40vw;
+  height: 100vh;
 }
 .community-text-container {
   display: flex;
@@ -61,6 +61,7 @@
   box-shadow: 0px 10px 50px -20px rgba(40, 181, 63, 0.5);
 }
 .community-whatsapp span {
+  text-align: center;
   color: #fff;
   font-family: Open Sans;
   font-size: 28px;
@@ -131,7 +132,6 @@
 }
 
 @media screen and (max-width: 1367px) {
-
   .community-text-container {
     display: flex;
     width: 40vw;
@@ -149,11 +149,11 @@
     font-size: 20px;
     font-weight: 400;
   }
-  
+
   .community-cards-container {
     display: flex;
   }
-  
+
   .community-whatsapp {
     padding: 15px;
   }
@@ -165,13 +165,10 @@
     padding-left: 0;
   }
 
-  
   .community-right-cards-container {
     gap: 20px;
   }
 
-
-  
   .community-right-card span {
     font-size: 16px;
     text-align: center;
@@ -187,15 +184,15 @@
     justify-content: center;
     align-items: center;
   }
-  .community-left{
-    width:100vw;
-    height:auto;
+  .community-left {
+    width: 100vw;
+    height: auto;
     justify-content: center;
     align-items: center;
   }
   .community-text-container {
     width: 90vw;
-    margin:0;
+    margin: 0;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -231,7 +228,7 @@
     font-size: 30px;
   }
 
-  .community-left{
+  .community-left {
     align-items: center;
   }
   .community-right-cards-container {
@@ -251,8 +248,8 @@
 
   .community-whatsapp {
     padding: 18px 40px;
-    border:2pt solid white;
-    gap:10px;
+    border: 2pt solid white;
+    gap: 10px;
   }
   .community-whatsapp span {
     font-size: 18px;
@@ -263,7 +260,7 @@
     flex-shrink: 0;
   }
 }
-@media screen and (max-width: 850px) and (max-height: 917px){
+@media screen and (max-width: 850px) and (max-height: 917px) {
   .community-container {
     padding: 0 0;
     gap: 1rem;
@@ -273,15 +270,15 @@
     flex-wrap: nowrap;
     align-items: center;
   }
-  .community-left{
-    width:100vw;
-    height:auto;
+  .community-left {
+    width: 100vw;
+    height: auto;
     justify-content: center;
     align-items: center;
   }
   .community-text-container {
     width: 70vw;
-    margin:0;
+    margin: 0;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -317,7 +314,7 @@
     font-size: 20px;
   }
 
-  .community-left{
+  .community-left {
     align-items: center;
   }
   .community-right-cards-container {
@@ -337,8 +334,8 @@
 
   .community-whatsapp {
     padding: 14px 20px;
-    border:2pt solid white;
-    gap:10px;
+    border: 2pt solid white;
+    gap: 10px;
   }
   .community-whatsapp span {
     font-size: 14px;
@@ -350,31 +347,30 @@
   }
 }
 
-@media screen and (max-width: 400px) and (max-height:705px) {
-  .community-heading{
-    font-size:30px;
+@media screen and (max-width: 400px) and (max-height: 705px) {
+  .community-heading {
+    font-size: 30px;
   }
 }
 
-
-@media screen and (max-width:500px){
-  .community-container{
-    height:auto;
-    gap:15px;
+@media screen and (max-width: 500px) {
+  .community-container {
+    height: auto;
+    gap: 15px;
     /* padding-bottom: 10px;
      */
-     padding:25px 0 20px 0;
+    padding: 25px 0 20px 0;
   }
   .community-heading {
     font-size: 48px;
   }
-  .community-headings .community-heading-col{
+  .community-headings .community-heading-col {
     font-size: 48px;
   }
-  .community-para{
+  .community-para {
     font-size: 18px;
   }
-  .community-cards-container{
+  .community-cards-container {
     padding: 20px 0;
   }
 }
