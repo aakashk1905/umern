@@ -2,7 +2,7 @@
   "name": "upskillmafia",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/merncampus",
+  "homepage": "/mern",
   "dependencies": {
     "-": "^0.0.1",
     "@emotion/react": "^11.11.1",

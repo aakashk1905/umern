@@ -21,7 +21,7 @@ function App() {
     <Router>
       <Routes>
         <Route
-          path="/merncampus"
+          path="/mern"
           element={
             <>
               <Home />
