@@ -1,0 +1,10 @@
+span{
+    display:inline-block;
+    line-height:130%
+}
+
+@media screen and (max-width: 850px) {
+    span{
+        line-height:110%;
+    }
+}
