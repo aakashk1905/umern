@@ -41,7 +41,7 @@ const Footer = () => {
                     <span>Develop your future with<span style={{ color: "#F0A202" }}>{"\u00A0Us!!"}</span> </span>
                     
                 </div>
-                <a href='https://chat.whatsapp.com/Bnm5dGfS5ME3Ab8Edp8Rxw' target="_blank" rel="noreferrer"><div className="footer-whatsapp" onClick={()=>window.fbq('track', ' AddtoWhatsapp')}>
+                <a href='https://chat.whatsapp.com/EV49XShflSiGph4413zcJL' target="_blank" rel="noreferrer"><div className="footer-whatsapp" onClick={()=>window.fbq('track', ' AddtoWhatsapp')}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
                             <g clipPath="url(#clip0_1_2882)">
                                 <path d="M1.37428 12.5469C1.37373 14.515 1.88799 16.4367 2.86583 18.1306L1.28076 23.9179L7.2034 22.365C8.84152 23.2568 10.6769 23.724 12.542 23.7242H12.547C18.7041 23.7242 23.7162 18.7139 23.7188 12.5557C23.72 9.57156 22.5589 6.7655 20.4494 4.65437C18.3403 2.54342 15.5352 1.38027 12.5465 1.37891C6.38862 1.37891 1.37691 6.38889 1.37437 12.5469" fill="url(#paint0_linear_1_2882)" />

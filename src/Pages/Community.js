@@ -42,7 +42,7 @@ const Community = () => {
           </div>
           <div className="community-cards-container">
             <a
-              href="https://chat.whatsapp.com/Bnm5dGfS5ME3Ab8Edp8Rxw"
+              href="https://chat.whatsapp.com/EV49XShflSiGph4413zcJL"
               target="_blank"
               rel="noreferrer"
             >

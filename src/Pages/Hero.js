@@ -167,7 +167,7 @@ const Hero = () => {
         </div>
         <motion.div className="hero-whatsapp-container" variants={btnGroup}>
           <a
-            href="https://chat.whatsapp.com/Bnm5dGfS5ME3Ab8Edp8Rxw"
+            href="https://chat.whatsapp.com/EV49XShflSiGph4413zcJL"
             target="_blank"
             rel="noreferrer"
           >
