@@ -77,7 +77,7 @@ const Footer = () => {
                     <div><a href = "mailto: upskillmafia@gmail.com">upskillmafia@gmail.com</a></div>
                 </div>
                 <div className='footer-links-cols'>
-                    <div><a href="#resources">Free UI UX Resources</a></div>
+                    <div><a href="#resources">Free Development Resources</a></div>
                     <div><a href="#peer" >Peer Learning</a></div>
                     <div><a href="#community" >Community</a></div>
                     
