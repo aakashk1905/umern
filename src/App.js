@@ -5,7 +5,7 @@ import CreativeAssignment from "./Pages/CreativeAssignment";
 import Curriculum from "./Pages/Curriculum";
 import Footer from "./Pages/Footer";
 import Home from "./Pages/Home";
-import error from './Assests/error.gif'
+import error from "./Assests/error.gif";
 
 import {
   BrowserRouter as Router,
@@ -48,6 +48,9 @@ function RedirectComponentMern() {
     );
   }
   return null;
+}
+function RedirectComponent2whatsapp() {
+  window.location.href = "https://chat.whatsapp.com/DE144jzlgPG1n5YJ8jD3pT";
 }
 function RedirectComponent2Mern() {
   const width = window.innerWidth;
@@ -162,6 +165,7 @@ function App() {
         ></Route>
         <Route path="mern/campus" element={<RedirectComponentMern />} />
         <Route path="mern/campus/stage" element={<RedirectComponent2Mern />} />
+        <Route path="mern/whatsapp" element={<RedirectComponent2whatsapp />} />
         <Route path="*" element={<Navigate replace to="/" />} />
       </Routes>
     </Router>
