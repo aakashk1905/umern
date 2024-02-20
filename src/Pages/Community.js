@@ -48,7 +48,7 @@ const Community = () => {
             >
               <div
                 className="community-whatsapp"
-                onClick={() => window.fbq("track", " AddtoWhatsapp")}
+                onClick={() => window.fbq("track", " Clicked")}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

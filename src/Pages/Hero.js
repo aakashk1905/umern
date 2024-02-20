@@ -174,7 +174,7 @@ const Hero = () => {
             <motion.div
               className="hero-whatsapp-subcontainer"
               whileHover={{ scale: 1.05 }}
-              onClick={() => window.fbq("track", " AddtoWhatsapp")}
+              onClick={() => window.fbq("track", " Clicked")}
             >
               <div className="hero-whatsapp">
                 <svg
