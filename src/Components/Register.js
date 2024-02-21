@@ -112,7 +112,7 @@ const Register = ({ setShowSign, setShowLogin }) => {
         setShowLogin(false);
         Cookies.set("user_name", data.newUser.name);
         Cookies.set("user_email", data.newUser.email);
-        window.open(`https://${window.location.hostname}/onboard`);
+        window.location.href = `https://${window.location.hostname}/onboard`;
       } else {
         alert(data.error);
       }

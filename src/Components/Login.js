@@ -4,14 +4,17 @@ import Cookies from "js-cookie";
 import "./Mlogin.css";
 import logo from "../Assests/logo-login.svg";
 import cross from "../Assests/cross-log.svg";
-import google from "../Assests/google.svg";
+// import google from "../Assests/google.svg";
+import { GoogleLogin } from "@react-oauth/google";
 
 const Login = ({ setShowLogin, setShowSign }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  async function loginUser(event) {
-    event.preventDefault();
+  const errorMessage = (error) => {
+    console.log(error);
+  };
+  async function loginUser(event, credential) {
+    if (event) event.preventDefault();
 
     const response = await fetch(
       "https://api.upskillmafia.com/api/v1/user/login",
@@ -23,6 +26,7 @@ const Login = ({ setShowLogin, setShowSign }) => {
         body: JSON.stringify({
           email,
           password,
+          credential,
         }),
       }
     );
@@ -34,7 +38,7 @@ const Login = ({ setShowLogin, setShowSign }) => {
       setShowLogin(false);
       Cookies.set("user_name", data.user.name);
       Cookies.set("user_email", data.user.email);
-      window.open(`https://${window.location.hostname}/onboard`);
+      window.location.href = `https://${window.location.hostname}/onboard`;
     } else {
       alert("Please check your username and password");
     }
@@ -59,10 +63,17 @@ const Login = ({ setShowLogin, setShowSign }) => {
             <img src={cross} alt="cross" />
           </div>
         </div>
-        <div className="login-google-cont">
+        {/* <div className="login-google-cont">
           <img src={google} alt="google" />
           Continue with Google
-        </div>
+        </div> */}
+        <GoogleLogin
+          className="googlesign"
+          onSuccess={(credentialResponse) => {
+            loginUser(null, credentialResponse);
+          }}
+          onError={errorMessage}
+        />
 
         <div className="login-or">Or</div>
         <div className="inp-cont">
