@@ -110,8 +110,9 @@ body {
   .whatsapp-const {
     position: fixed;
     display: flex;
-    width: 70vw;
+    width: 90vw;
     padding: 15px;
+    left:5vw; 
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -129,7 +130,7 @@ body {
     font-size: 12px;
     font-style: normal;
     font-weight: 600;
-    width: 40vw;
+
     text-align: center;
     line-height: normal;
   }

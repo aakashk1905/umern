@@ -1,5 +1,6 @@
 import "./Styles/Curriculum.css";
 import { useEffect, useRef } from "react";
+
 const Curriculum = () => {
   const targetRef = useRef(null);
   useEffect(() => {

@@ -68,6 +68,7 @@
   cursor: pointer;
 }
 .footer-whatsapp {
+  cursor: pointer;
   display: flex;
   padding: 25px 15px;
   width: 30vw;

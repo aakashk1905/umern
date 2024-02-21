@@ -6,7 +6,8 @@ import cardimg3 from "../Assests/frame-39742@2x.png";
 import cardimg4 from "../Assests/frame-39743@2x.png";
 import TextSpan from "../Components/TextSpan";
 import { motion } from "framer-motion";
-const Hero = () => {
+import Cookies from "js-cookie";
+const Hero = ({ setShowSign }) => {
   const master = "Master ".split("");
   let easeing = [0.6, -0.05, 0.01, 0.99];
 
@@ -174,7 +175,14 @@ const Hero = () => {
             <motion.div
               className="hero-whatsapp-subcontainer"
               whileHover={{ scale: 1.05 }}
-              onClick={() => window.fbq("track", " Clicked")}
+              onClick={() => {
+                window.fbq("track", "Clicked");
+                if (Cookies.get("user_email")) {
+                  window.open(`https://${window.location.hostname}/onboard`);
+                } else {
+                  setShowSign(true);
+                }
+              }}
             >
               <div className="hero-whatsapp">
                 <svg
@@ -193,7 +201,7 @@ const Hero = () => {
                     fill="white"
                   />
                 </svg>
-                <div>Join The Whatsapp Community</div>
+                <div>Register Now For Free!</div>
               </div>
             </motion.div>
           </a>

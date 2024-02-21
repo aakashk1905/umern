@@ -50,6 +50,7 @@
 }
 
 .community-whatsapp {
+  cursor: pointer;
   display: inline-flex;
   padding: 20px;
   justify-content: center;
