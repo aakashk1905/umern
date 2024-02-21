@@ -3,13 +3,13 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  height:80vh;
+  height: 80vh;
   gap: 2rem;
 }
 .hero-heading-container {
   display: flex;
   flex-direction: column;
-  gap:7px;
+  gap: 7px;
   justify-content: center;
   align-items: center;
   width: 80vw;
@@ -26,7 +26,7 @@
 .hero-heading-p {
   color: #fff;
   display: none;
-  width: 95vw;;
+  width: 95vw;
   text-align: center;
   font-family: Open Sans;
   font-size: 45px;
@@ -34,7 +34,7 @@
   font-weight: 700;
   line-height: 110%;
 }
-.letter-box{
+.letter-box {
   display: inline-block;
 }
 .hero-whatsapp-container {
@@ -44,6 +44,7 @@
   align-items: center;
 }
 .hero-whatsapp-subcontainer {
+  cursor: pointer;
   width: 35vw;
 }
 .hero-whatsapp {
@@ -67,7 +68,7 @@
 
 .hero-cards-container {
   width: 90vw;
-  display:flex;
+  display: flex;
   gap: 20px;
 }
 
@@ -103,7 +104,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height:80vh;
+    height: 80vh;
     gap: 2rem;
   }
   .hero-heading-container {
@@ -122,7 +123,7 @@
     font-weight: 800;
     line-height: 98%;
   }
-  
+
   .hero-whatsapp-container {
     width: 80vw;
     display: flex;
@@ -143,7 +144,7 @@
     align-items: center;
 
     gap: 20px;
-  
+
     color: #fff;
     font-family: Open Sans;
     font-size: 17px;
@@ -151,13 +152,13 @@
     font-weight: 600;
     line-height: normal;
   }
-  
+
   .hero-cards-container {
     width: 90vw;
-    display:flex;
+    display: flex;
     gap: 20px;
   }
-  
+
   .hero-cards {
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -183,7 +184,7 @@
   }
 }
 
-@media screen and (min-width: 980px) and (max-width:1200px) {
+@media screen and (min-width: 980px) and (max-width: 1200px) {
   .hero-cards img {
     width: 40px;
     height: 40px;
@@ -199,10 +200,9 @@
   }
 }
 
-
 @media screen and (max-width: 850px) {
-  .hero-container{
-    height:85vh;
+  .hero-container {
+    height: 85vh;
   }
   .hero-heading {
     color: #fff;
@@ -213,23 +213,22 @@
     font-weight: 800;
     line-height: 110%;
   }
-  
+
   .hero-whatsapp-subcontainer {
     width: 70vw;
   }
   .hero-whatsapp {
-    gap:0;
+    gap: 0;
     font-size: 15px;
-    
   }
-  
+
   .hero-cards-container {
     width: 90vw;
-    display:flex;
+    display: flex;
     flex-direction: column;
     gap: 20px;
   }
-  
+
   .hero-cards {
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -256,10 +255,9 @@
   }
 }
 
-
-@media screen and (min-width:500px) and (max-width: 850px) and (max-height:917px) {
-  .hero-container{
-    height:auto;
+@media screen and (min-width: 500px) and (max-width: 850px) and (max-height: 917px) {
+  .hero-container {
+    height: auto;
   }
   .hero-heading {
     font-size: 28px;
@@ -271,14 +269,13 @@
   .hero-whatsapp {
     padding: 8px 8px;
     font-size: 15px;
-    
   }
-  
+
   .hero-cards-container {
     width: 70vw;
     gap: 15px;
   }
-  
+
   .hero-cards {
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -305,17 +302,16 @@
   }
 }
 
-@media screen and (max-width:500px){
-  .hero-container{
-    height:auto;
-    padding-bottom:10px;
+@media screen and (max-width: 500px) {
+  .hero-container {
+    height: auto;
+    padding-bottom: 10px;
     justify-content: center;
   }
-  .hero-heading{
+  .hero-heading {
     display: none;
   }
-  .hero-heading-p{
+  .hero-heading-p {
     display: block;
   }
 }
-  
