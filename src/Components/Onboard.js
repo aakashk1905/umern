@@ -11,6 +11,39 @@ const Onboard = ({ setShowSign }) => {
   const [number, setNumber] = useState("");
   const [disabled, setDisabled] = useState(false);
 
+  const sendNewUser = async (number) => {
+    try {
+      const response = await fetch(
+        "https://api.interakt.ai/v1/public/message/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization:
+              "Basic MGRiYUtNMDNSRlFteUJ2VGJTSkVzTVhBNnl6X2sxX2phc2JldjU3OWhSUTo=",
+          },
+          body: JSON.stringify({
+            countryCode: "+91",
+            phoneNumber: number,
+            type: "Template",
+            template: {
+              name: "mern_onboard_msg",
+              languageCode: "en",
+              headerValues: [
+                "https://s3.ap-south-1.amazonaws.com/upskillmafia.com/onboard.mp4",
+              ],
+            },
+          }),
+        }
+      );
+
+      if (!response.ok) throw new Error("Something went Wrong");
+    } catch (e) {
+      console.log(e);
+      throw e;
+    }
+  };
+
   async function loginUser(event) {
     setDisabled(true);
     if (event) event.preventDefault();
@@ -30,7 +63,7 @@ const Onboard = ({ setShowSign }) => {
     urlencoded.append("wpNum", number);
     const now = new Date();
     const istTime = now.toLocaleString("en-US", { timeZone: "Asia/Kolkata" });
-    console.log(istTime)
+    console.log(istTime);
     urlencoded.append("date", istTime);
 
     const requestOptions = {
@@ -46,7 +79,12 @@ const Onboard = ({ setShowSign }) => {
     );
 
     if (response.ok) {
-      alert("Registered successfully");
+      alert("Registered successfully!!");
+      try {
+        sendNewUser(number);
+      } catch (err) {
+        console.log(err);
+      }
       setDisabled(false);
 
       Cookies.set("user_name", name);
@@ -110,7 +148,7 @@ const Onboard = ({ setShowSign }) => {
         </div>
 
         <button type="submit" className={`l-btn ${disabled && "disable-btn"}`}>
-          Register
+          {disabled ? "Registering..." : "Register"}
         </button>
       </form>
     </div>
