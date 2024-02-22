@@ -8,6 +8,14 @@ body {
 body::-webkit-scrollbar {
   display: none;
 }
+@keyframes glare {
+  0% {
+    left: -135%;
+  }
+  100% {
+    left: 130%;
+  }
+}
 
 .hack-faq-cont,
 .h-footer-cont,
@@ -18,7 +26,6 @@ body::-webkit-scrollbar {
 .hack-why-cont,
 .form-container,
 .timeline-cont {
- 
   cursor: default;
 }
 *::-webkit-scrollbar {
@@ -112,22 +119,25 @@ body {
     display: flex;
     width: 90vw;
     padding: 15px;
-    left:5vw; 
+    left: 5vw;
     justify-content: center;
     align-items: center;
     gap: 10px;
     bottom: 10px;
 
     z-index: 11;
-    border-radius: 10px;
-    border: 2px solid #fff;
-    background: linear-gradient(169deg, #1faf38 7.84%, #60d669 91.17%);
+    border-radius: 500px;
+    background: linear-gradient(94deg, #fbb913 5.82%, #4dcf41 94.4%);
+    box-shadow: 0px 5px 0px 0px rgba(255, 255, 255, 0.25) inset,
+      0px -6px 0px 0px rgba(33, 44, 28, 0.25) inset,
+      0px 0px 0px 12px rgba(255, 255, 255, 0.05),
+      0px 0px 96px -16px rgba(99, 177, 87, 0.75);
   }
 
   .whatsapp-const span {
-    color: #fff;
+    color: #070a15;
     font-family: Open Sans;
-    font-size: 12px;
+    font-size: 14px;
     font-style: normal;
     font-weight: 600;
 

@@ -15,6 +15,24 @@
   top: 0;
   left: 0;
 }
+.onb-head {
+  color: #fff;
+  font-family: Open Sans;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 16.8px */
+}
+.onb-text {
+  width: 70%;
+  text-align: center;
+  color: #fff;
+  font-family: Open Sans;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 16.8px */
+}
 .inp-cont {
   display: flex;
   flex-direction: column;

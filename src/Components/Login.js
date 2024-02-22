@@ -63,10 +63,7 @@ const Login = ({ setShowLogin, setShowSign }) => {
             <img src={cross} alt="cross" />
           </div>
         </div>
-        {/* <div className="login-google-cont">
-          <img src={google} alt="google" />
-          Continue with Google
-        </div> */}
+
         <GoogleLogin
           className="googlesign"
           onSuccess={(credentialResponse) => {

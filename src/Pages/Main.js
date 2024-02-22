@@ -10,13 +10,14 @@ import Home from "./Home";
 import PeerLearning from "./PeerLearning";
 import DesignHackathons from "./DesignHackathons";
 import { useState } from "react";
-import Register from "../Components/Register";
-import Login from "../Components/Login";
+// import Register from "../Components/Register";
+// import Login from "../Components/Login";
 import Cookies from "js-cookie";
 import { useSearchParams } from "react-router-dom";
+import Onboard from "../Components/Onboard";
 
 const Main = () => {
-  const [showLogin, setShowLogin] = useState(false);
+  // const [showLogin, setShowLogin] = useState(false);
   const [showSign, setShowSign] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -33,17 +34,12 @@ const Main = () => {
 
   return (
     <>
-      {showSign && (
-        <Register setShowLogin={setShowLogin} setShowSign={setShowSign} />
-      )}
-      {showLogin && (
-        <Login setShowLogin={setShowLogin} setShowSign={setShowSign} />
-      )}
+      {showSign && <Onboard setShowSign={setShowSign} />}
       <Home setShowSign={setShowSign} />
       <div
         className="whatsapp-const"
         onClick={() => {
-          window.fbq("track", "Clicked");
+          window.fbq("track", "AddtoWhatsapp");
           if (Cookies.get("user_email")) {
             window.open(`https://${window.location.hostname}/onboard`);
           } else {
@@ -51,7 +47,7 @@ const Main = () => {
           }
         }}
       >
-        <svg
+        {/* <svg
           xmlns="http://www.w3.org/2000/svg"
           width="25"
           height="24"
@@ -104,7 +100,7 @@ const Main = () => {
               />
             </clipPath>
           </defs>
-        </svg>
+        </svg> */}
         <span>Register Now For Free</span>
       </div>
       <PeerLearning />

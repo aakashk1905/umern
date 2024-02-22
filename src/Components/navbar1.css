@@ -50,21 +50,46 @@ a {
   font-style: normal;
   font-weight: 600;
   line-height: 120%;
+  
+}
+
+.mafia__navbar-sign button::before {
+  content: "";
+  background: rgba(255, 255, 255, 0.25);
+  mix-blend-mode: plus-lighter;
+  /* filter: blur(15px); */
+  width: 30px;
+  height: 100%;
+  top: 0%;
+  left: -45%;
+  transform: skew(-45deg);
+  position: absolute;
+  /* animation: glare 3s infinite; */
+  transition: all 1s;
+}
+
+.mafia__navbar-sign button:hover::before {
+  left: 120%;
 }
 
 .mafia__navbar-sign button,
 .mafia__navbar-menu_container button {
+  position: relative;
+  overflow: hidden;
   display: flex;
   padding: 12px 18px;
   justify-content: center;
   cursor: pointer;
   align-items: center;
   gap: 10px;
-  border-radius: 15px;
-  border: 2px solid #1faf38;
-  background: #1faf38;
-  box-shadow: 0px 5px 50px -15px rgba(96, 214, 105, 0.5);
-  color: #fff;
+  border-radius: 500px;
+  background: linear-gradient(94deg, #fbb913 5.82%, #4dcf41 94.4%);
+  box-shadow: 0px 5px 0px 0px rgba(255, 255, 255, 0.25) inset,
+    0px -6px 0px 0px rgba(33, 44, 28, 0.25) inset,
+    0px 0px 0px 12px rgba(255, 255, 255, 0.05),
+    0px 0px 96px -16px rgba(99, 177, 87, 0.75);
+  border: none;
+  color: #070a15;
   font-family: Open Sans;
   font-size: 14px;
   font-style: normal;
