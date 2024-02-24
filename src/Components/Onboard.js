@@ -54,6 +54,12 @@ const Onboard = ({ setShowSign }) => {
       return;
     }
 
+    try {
+      await sendNewUser(number);
+    } catch (err) {
+      console.log(err);
+    }
+
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
 
@@ -80,11 +86,6 @@ const Onboard = ({ setShowSign }) => {
 
     if (response.ok) {
       alert("Registered successfully!!");
-      try {
-        sendNewUser(number);
-      } catch (err) {
-        console.log(err);
-      }
       setDisabled(false);
 
       Cookies.set("user_name", name);
