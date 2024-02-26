@@ -27,11 +27,14 @@ const Onboard = ({ setShowSign }) => {
             phoneNumber: number,
             type: "Template",
             template: {
-              name: "mern_onboard_msg",
+              name: "mern_msg_onboard",
               languageCode: "en",
               headerValues: [
                 "https://s3.ap-south-1.amazonaws.com/upskillmafia.com/onboard.mp4",
               ],
+              buttonValues: {
+                1: ["BhgA7GcBedGJVRqJASg651"],
+              },
             },
           }),
         }
