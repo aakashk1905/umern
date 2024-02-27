@@ -22,7 +22,7 @@ const Main1 = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [wpPop, setwpPop] = useState(false);
   const [user, setUser] = useState("");
-  const [tasks, setTasks] = useState({});
+  const [tasks, setTasks] = useState([]);
   const [leaderboard, setLeaderboard] = useState({});
 
   const [tasksLoading, setTasksLoading] = useState(true);
@@ -38,6 +38,18 @@ const Main1 = () => {
     fetchData();
     fetchData1();
     fetchLeaderBoard();
+    if (stage) {
+      if (stage !== "stage" && stage !== "tasks") {
+        console.log(stage);
+        window.location.href = `https://${window.location.hostname}/mern/dashboard`;
+        return <h1> Not a Valid URL !!!!</h1>;
+      } else if (stage === "stage") {
+        if (Cookies.get("user_email"))
+          window.location.href = `https://${window.location.hostname}/mern/campus/stage`;
+      } else if (stage === "tasks") {
+        setActive(3);
+      }
+    }
   }, []);
   const fetchLeaderBoard = async () => {
     setTasksLoading(true);
@@ -97,20 +109,6 @@ const Main1 = () => {
     }
   };
 
-  useEffect(() => {
-    if (stage) {
-      if (stage !== "stage" && stage !== "tasks") {
-        console.log(stage);
-        window.location.href = `https://${window.location.hostname}/mern/dashboard`;
-        return <h1> Not a Valid URL !!!!</h1>;
-      } else if (stage === "stage") {
-        if (Cookies.get("user_email"))
-          window.location.href = `https://${window.location.hostname}/mern/campus/stage`;
-      } else if (stage === "tasks") {
-        setActive(3);
-      }
-    }
-  }, []);
   if (showForgot || otpSent)
     return (
       <ForgotPass

@@ -17,7 +17,7 @@ const Tasks = ({ tasks, user }) => {
   const [feedback, setFeedback] = useState("");
   const [data, setData] = useState("");
   const updates = {};
-  tasks.forEach((task) => {
+  tasks?.forEach((task) => {
     updates[task.taskName] = task;
   });
 
@@ -646,8 +646,8 @@ const Tasks = ({ tasks, user }) => {
           </div>
           <div className="tr-top-submid-cont">
             <div className="tr-submid-progress">
-              <div>{level[user?.userDetails?.level].start} XP</div>
-              <div>{level[user?.userDetails?.level].end + 1} XP</div>
+              <div>{level[user?.userDetails?.level]?.start} XP</div>
+              <div>{level[user?.userDetails?.level]?.end + 1} XP</div>
             </div>
             <div className="tr-prog-bar">
               <div
@@ -655,9 +655,9 @@ const Tasks = ({ tasks, user }) => {
                 style={{
                   width: `${
                     ((user?.userDetails?.points -
-                      level[user?.userDetails?.level].start) /
-                      (level[user?.userDetails?.level].end -
-                        level[user?.userDetails?.level].start)) *
+                      level[user?.userDetails?.level]?.start) /
+                      (level[user?.userDetails?.level]?.end -
+                        level[user?.userDetails?.level]?.start)) *
                     100
                   }%`,
                 }}
@@ -667,7 +667,7 @@ const Tasks = ({ tasks, user }) => {
               <div>{user?.userDetails?.level}</div>
               <div>
                 <b>
-                  {level[user?.userDetails?.level].end -
+                  {level[user?.userDetails?.level]?.end -
                     user?.userDetails?.points +
                     1}
                   XP{" "}
