@@ -101,7 +101,7 @@ function RedirectComponent2Mern() {
         };
         fetchData();
       } else {
-        window.location.href = `https://${window.location.hostname}/mern/dashboard`;
+        window.location.href = `https://${window.location.hostname}/mern/dashboard/stage`;
       }
     }
   }, [width]);
