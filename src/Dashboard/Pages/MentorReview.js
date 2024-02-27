@@ -7,6 +7,7 @@ import FeedBack from "../Components/Mentor/FeedBack";
 const MentorReview = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [user, setUser] = useState("");
+  const [redirect, setRedirect] = useState(false);
 
   const [active, setActive] = useState(1);
   const email = Cookies.get("user_email");
@@ -24,6 +25,7 @@ const MentorReview = () => {
       if (result.userGot.role !== "mentor") {
         alert("This page is accessible only to mentors");
         window.location.href = "https://upskillmafia.com/dashboard";
+        setRedirect(true);
       }
       setUser(result.userGot);
     } catch (error) {
@@ -35,6 +37,10 @@ const MentorReview = () => {
     fetchData();
   }, []);
 
+  if (redirect) {
+    return <>Redirecting....</>;
+  }
+  
   return (
     <div className="main-cont">
       {isOpen && (
