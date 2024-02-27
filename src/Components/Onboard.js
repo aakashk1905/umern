@@ -86,6 +86,7 @@ const Onboard = ({ setShowSign }) => {
       "https://script.google.com/macros/s/AKfycbwodoPEkWGH8LCsVvU9knksm2Wsw1I9NjJJ8GJhv1Nf9fxABcz2hZ3mOkgQMcaC_JzS/exec",
       requestOptions
     );
+    console.log(response.JSON());
 
     if (response.ok) {
       alert("Registered successfully!!");

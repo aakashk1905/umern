@@ -9,13 +9,10 @@ import {
   Route,
 } from "react-router-dom";
 
-// import PeerLearning from "./Pages/PeerLearning";
-// import DesignHackathons from "./Pages/DesignHackathons";
 import { useEffect } from "react";
-// import Register from "./Components/Register";
-// import Login from "./Components/Login";
-// import Cookies from "js-cookie";
 import Main from "./Pages/Main";
+import Main1 from "./Dashboard/Components/Main";
+import Cookies from "js-cookie";
 
 function RedirectComponentMern() {
   const width = window.innerWidth;
@@ -24,13 +21,35 @@ function RedirectComponentMern() {
 
   useEffect(() => {
     if (width >= 800) {
-      if (room) {
-        window.location.href = `https://cosmos.video/v/5dvm-syhq-p15w/office/r/${room}`;
+      const email = Cookies.get("user_email");
+      if (email) {
+        const fetchData = async () => {
+          try {
+            const response = await fetch(
+              `https://api.upskillmafia.com/api/v1/user/update-streak?email=${email}`,
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+              }
+            );
+            const data = await response.json();
+
+            if (data.success) {
+              window.location.href =
+                "https://cosmos.video/v/5dvm-syhq-p15w/office";
+            }
+          } catch (error) {
+            alert("something went wrong....Please try again!!!");
+          }
+        };
+        fetchData();
       } else {
-        window.location.href = "https://cosmos.video/v/5dvm-syhq-p15w/office";
+        window.location.href = `https://${window.location.hostname}/mern/dashboard`;
       }
     }
-  }, [width, room]);
+  }, [width]);
 
   if (width < 800) {
     return (
@@ -53,11 +72,38 @@ function RedirectComponent2whatsapp() {
 }
 function RedirectComponent2Mern() {
   const width = window.innerWidth;
-  // console.log(width)
+
   useEffect(() => {
-    if (width >= 800)
-      window.location.href =
-        "https://cosmos.video/v/5dvm-syhq-p15w/office/r/stage";
+    if (width >= 800) {
+      const email = Cookies.get("user_email");
+
+      if (email) {
+        const fetchData = async () => {
+          try {
+            const response = await fetch(
+              `https://api.upskillmafia.com/api/v1/user/update-streak?email=${email}`,
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+              }
+            );
+            const data = await response.json();
+
+            if (data.success) {
+              window.location.href =
+                "https://cosmos.video/v/5dvm-syhq-p15w/office/r/stage";
+            }
+          } catch (error) {
+            alert("something went wrong....Please try again!!!");
+          }
+        };
+        fetchData();
+      } else {
+        window.location.href = `https://${window.location.hostname}/mern/dashboard`;
+      }
+    }
   }, [width]);
 
   if (width < 800) {
@@ -80,11 +126,14 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/mern" element={<Main />}></Route>
-        <Route path="mern/campus" element={<RedirectComponentMern />} />
-        <Route path="mern/campus/stage" element={<RedirectComponent2Mern />} />
-        <Route path="mern/whatsapp" element={<RedirectComponent2whatsapp />} />
-        <Route path="*" element={<Navigate replace to="/" />} />
+        <Route path="/mern">
+          <Route index element={<Main />} />
+          <Route path="campus" element={<RedirectComponentMern />} />
+          <Route path="campus/stage" element={<RedirectComponent2Mern />} />
+          <Route path="whatsapp" element={<RedirectComponent2whatsapp />} />
+          <Route path="dashboard" element={<Main1 />} />
+          <Route path="*" element={<Navigate replace to="/" />} />
+        </Route>
       </Routes>
     </Router>
   );
