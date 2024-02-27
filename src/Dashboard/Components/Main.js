@@ -28,7 +28,7 @@ const Main1 = () => {
   const [tasksLoading, setTasksLoading] = useState(true);
   const [active, setActive] = useState(1);
   const email = Cookies.get("user_email");
-  const { slug } = useParams();
+  const { stage } = useParams();
 
   useEffect(() => {
     const email = Cookies.get("user_email");
@@ -38,12 +38,12 @@ const Main1 = () => {
     fetchData();
     fetchData1();
     fetchLeaderBoard();
-    if (slug === "tasks") {
-      console.log(slug);
-      setActive(2);
-    } else if (slug === "hackathon") {
-      setActive(2);
-    }
+    // if (slug === "tasks") {
+    //   console.log(slug);
+    //   setActive(2);
+    // } else if (slug === "hackathon") {
+    //   setActive(2);
+    // }
   }, []);
   const fetchLeaderBoard = async () => {
     setTasksLoading(true);
@@ -124,11 +124,13 @@ const Main1 = () => {
       />
     );
 
-  const tabs = ["tasks", "hackathon"];
-  if (slug) {
-    if (!tabs.includes(slug)) {
-      window.location.href = "https://upskillmafia.com/dashboard";
+  // const tabs = ["tasks", "hackathon"];
+  if (stage) {
+    if (stage !== "stage") {
+      window.location.href = `https://${window.location.hostname}/mern/dashboard`;
       return <h1> Not a Valid URL !!!!</h1>;
+    } else {
+      window.location.href = `https://${window.location.hostname}/mern/campus/stage`;
     }
   }
   return (

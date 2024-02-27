@@ -132,6 +132,7 @@ function App() {
           <Route path="campus/stage" element={<RedirectComponent2Mern />} />
           <Route path="whatsapp" element={<RedirectComponent2whatsapp />} />
           <Route path="dashboard" element={<Main1 />} />
+          <Route path="dashboard/:stage" element={<Main1 />} />
           <Route path="*" element={<Navigate replace to="/" />} />
         </Route>
       </Routes>
