@@ -38,12 +38,6 @@ const Main1 = () => {
     fetchData();
     fetchData1();
     fetchLeaderBoard();
-    // if (slug === "tasks") {
-    //   console.log(slug);
-    //   setActive(2);
-    // } else if (slug === "hackathon") {
-    //   setActive(2);
-    // }
   }, []);
   const fetchLeaderBoard = async () => {
     setTasksLoading(true);
@@ -124,13 +118,13 @@ const Main1 = () => {
       />
     );
 
-  // const tabs = ["tasks", "hackathon"];
   if (stage) {
     if (stage !== "stage") {
       window.location.href = `https://${window.location.hostname}/mern/dashboard`;
       return <h1> Not a Valid URL !!!!</h1>;
     } else {
-      window.location.href = `https://${window.location.hostname}/mern/campus/stage`;
+      if (Cookies.get("user_email"))
+        window.location.href = `https://${window.location.hostname}/mern/campus/stage`;
     }
   }
   return (
