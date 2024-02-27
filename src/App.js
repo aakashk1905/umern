@@ -13,6 +13,7 @@ import { useEffect } from "react";
 import Main from "./Pages/Main";
 import Main1 from "./Dashboard/Components/Main";
 import Cookies from "js-cookie";
+import MentorReview from "./Dashboard/Pages/MentorReview";
 
 function RedirectComponentMern() {
   const width = window.innerWidth;
@@ -132,6 +133,7 @@ function App() {
           <Route path="campus/stage" element={<RedirectComponent2Mern />} />
           <Route path="whatsapp" element={<RedirectComponent2whatsapp />} />
           <Route path="dashboard" element={<Main1 />} />
+          <Route path="dashboard/mentor/review" element={<MentorReview />} />
           <Route path="dashboard/:stage" element={<Main1 />} />
           <Route path="*" element={<Navigate replace to="/" />} />
         </Route>

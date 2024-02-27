@@ -54,7 +54,7 @@
   line-height: normal;
   letter-spacing: -0.8px;
 }
-.subt-inner-mid input {
+.subt-inner-mid input, textarea {
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.05);
   display: flex;

@@ -1,45 +1,33 @@
 import React, { useEffect, useState } from "react";
 import "./FeedBack.css";
 import Cookies from "js-cookie";
+import ForgotPass from "../User/ForgotPass";
+import Register from "../User/Register";
+import Login from "../User/Login";
+import Givefeedback from "./Givefeedback";
 const FeedBack = () => {
   const [search, setSearch] = useState("");
   const [tasks, setTasks] = useState([]);
   const [tasksLoading, setTasksLoading] = useState(false);
-
-  // const updateStatus = async (status, sheetname, email1) => {
-  //   try {
-  //     const response = await fetch(
-  //       `https://api.upskillmafia.com/api/v1/user/updatetaskbymail?email=${email1}&sheetname=${sheetname}&status=${status}`,
-  //       {
-  //         method: "POST",
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //         },
-  //       }
-  //     );
-  //     const data = await response.json();
-
-  //     if (data.success) {
-  //       alert("Updated");
-  //       fetchData1();
-  //     } else alert("Failed to update!! Try Again");
-  //   } catch (error) {
-  //     alert("something went wrong....Please try again!!!");
-  //   }
-  // };
+  const [showLogin, setShowLogin] = useState(false);
+  const [showSign, setShowSign] = useState(false);
+  const [showForgot, setShowForgot] = useState(false);
+  const otpSent = Cookies.get("otp_sent") ? true : false;
+  const [giveFeedBack, setGiveFeedBack] = useState(false);
+  const [data, setData] = useState("");
 
   const fetchData1 = async () => {
     setTasksLoading(true);
     try {
       const response = await fetch(
-        `https://api.upskillmafia.com/api/v1/submisssions`
+        `https://api.upskillmafia.com/api/v1/submissions`
       );
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
 
       const result = await response.json();
-      setTasks(result.submissions);
+      setTasks(result.tasks);
       setTasksLoading(false);
     } catch (error) {
       console.log("Error fetching data:", error.message);
@@ -49,10 +37,39 @@ const FeedBack = () => {
 
   useEffect(() => {
     fetchData1();
+    const email = Cookies.get("user_email");
+    if (!email) {
+      setShowSign(true);
+    }
   }, []);
+
+  if (showForgot || otpSent)
+    return (
+      <ForgotPass
+        setShowLogin={setShowLogin}
+        otpSent={otpSent}
+        setShowForgot={setShowForgot}
+      />
+    );
+
+  if (showSign)
+    return <Register setShowLogin={setShowLogin} setShowSign={setShowSign} />;
+
+  if (showLogin)
+    return (
+      <Login
+        setShowLogin={setShowLogin}
+        setShowSign={setShowSign}
+        setShowForgot={setShowForgot}
+      />
+    );
 
   return (
     <div className="mfb-cont">
+      {giveFeedBack && (
+        <Givefeedback setGiveFeedBack={setGiveFeedBack} data={data} />
+      )}
+
       <div className="task-stats-cont" style={{ display: "none" }}>
         <div className="task-stat">
           <div className="ts-head">24,385</div>
@@ -102,18 +119,7 @@ const FeedBack = () => {
             </div>
           </div>
         </div>
-        <div className="tdc-list-head-cont">
-          <div
-            className="tdc-list-head"
-            style={{ width: "fit-content", padding: "0 5px" }}
-          >
-            No.
-          </div>
-          <div className="tdc-list-head">Student Name</div>
-          <div className="tdc-list-head">Task Name</div>
-          <div className="tdc-list-head">Submission Date</div>
-          <div className="tdc-list-head tdc-act">Actions</div>
-        </div>
+
         <div className="tdc-list-cont">
           {!tasksLoading && tasks.length === 0 && (
             <div
@@ -144,99 +150,54 @@ const FeedBack = () => {
               <div className="ts-det">Data Loading ...</div>
             </div>
           )}
-          {/* {!tasksLoading &&
-            tasks.map((k, index) => (
-              <div className="tdc-list-head-cont li-body" key={index}>
-                <div
-                  className="tdc-list-head tdc-list-head1"
-                  style={{ width: "fit-content", padding: "0 5px" }}
-                >
-                  {index + 1}
-                </div>
-                <div className="tdc-list-head tdc-list-head1">
-                  {k.taskName}
-                </div>
-                <div className="tdc-list-head tdc-list-head1">{k}</div>
-                <div className="tdc-list-head tdc-list-head1">
-                  {datestr(tasks[k].dos)}
-                </div>
-                <div className="tds-action-list">
-                  <div
-                    className="vt-cont"
-                    onClick={() =>
-                      window.open(
-                        tasks[k].link
-                          ? tasks[k].link
-                          : tasks[k].file
-                          ? tasks[k].file
-                          : "",
-                        "_blank"
-                      )
-                    }
-                  >
-                    View Task
-                  </div>
-                  <div className="vr"> </div>
-                  <div
-                    className="tdm-action-cont"
-                    onClick={() => {
-                      if (tasks[k].status === "approved") {
-                        alert("Already Approved");
-                      } else updateStatus("approved", k, tasks[k].email);
-                    }}
-                  >
-                    <div className="tdm-action-circle">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="12"
-                        viewBox="0 0 16 12"
-                        fill="none"
-                      >
-                        <path
-                          d="M5.16613 11.7748C4.71195 11.775 4.27638 11.5944 3.9555 11.273L0.295374 7.61425C-0.098458 7.22029 -0.098458 6.58169 0.295374 6.18773C0.689332 5.7939 1.32794 5.7939 1.72189 6.18773L5.16613 9.63196L14.2781 0.519983C14.6721 0.126151 15.3107 0.126151 15.7046 0.519983C16.0985 0.913941 16.0985 1.55255 15.7046 1.9465L6.37675 11.273C6.05587 11.5944 5.6203 11.775 5.16613 11.7748Z"
-                          fill="#1ABA5B"
-                        />
-                      </svg>
-                    </div>
-                    <div className="approve">
-                      {tasks[k].status === "approved" ? "Approved" : "Approve"}
-                    </div>
-                  </div>
-                  <div
-                    className="tdm-action-cont"
-                    onClick={() => {
-                      if (tasks[k].status === "approved") {
-                        alert("Already Approved");
-                      } else updateStatus("redo", k, tasks[k].email);
-                    }}
-                  >
-                    <div className="tdm-action-circle">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                      >
-                        <g clipPath="url(#clip0_787_2044)">
-                          <path
-                            d="M10.8667 10.005C11.0542 10.1925 11.3085 10.2978 11.5737 10.2978C11.8388 10.2978 12.0931 10.1925 12.2807 10.005L15.4313 6.85504C15.7973 6.48833 16.0028 5.99143 16.0028 5.47337C16.0028 4.95531 15.7973 4.45841 15.4313 4.0917L12.2773 0.941703C12.1864 0.841067 12.0759 0.759994 11.9526 0.703417C11.8293 0.646841 11.6957 0.615944 11.5601 0.612607C11.4245 0.60927 11.2896 0.633563 11.1637 0.684008C11.0377 0.734452 10.9234 0.809993 10.8276 0.906033C10.7318 1.00207 10.6565 1.1166 10.6063 1.24266C10.5562 1.36871 10.5322 1.50365 10.5359 1.63926C10.5395 1.77487 10.5707 1.90832 10.6276 2.03149C10.6845 2.15466 10.7658 2.26497 10.8667 2.3557L13.0213 4.46704H3.546C2.60592 4.46827 1.7047 4.84226 1.03996 5.507C0.375227 6.17174 0.00123474 7.07296 0 8.01304L0 12.467C0.00105871 13.407 0.374924 14.3081 1.03957 14.9728C1.70422 15.6374 2.60538 16.0113 3.54533 16.0124H12.4547C12.7199 16.0124 12.9742 15.907 13.1618 15.7195C13.3493 15.5319 13.4547 15.2776 13.4547 15.0124C13.4547 14.7472 13.3493 14.4928 13.1618 14.3053C12.9742 14.1177 12.7199 14.0124 12.4547 14.0124H3.54533C3.13565 14.0118 2.74289 13.8489 2.4532 13.5592C2.16351 13.2695 2.00053 12.8767 2 12.467V8.01304C2.00035 7.60312 2.16335 7.21009 2.4532 6.92024C2.74306 6.63038 3.13608 6.46739 3.546 6.46704H12.9853L10.8667 8.59104C10.6792 8.77856 10.5739 9.03287 10.5739 9.29804C10.5739 9.5632 10.6792 9.81751 10.8667 10.005Z"
-                            fill="#FF4747"
-                          />
-                        </g>
-                        <defs>
-                          <clipPath id="clip0_787_2044">
-                            <rect width="16" height="16" fill="white" />
-                          </clipPath>
-                        </defs>
-                      </svg>
-                    </div>
-                    <div className="approve">Redo</div>
-                  </div>
-                </div>
+          {!tasksLoading && (
+            <div className="tasks-info-cont">
+              <div className="tasks-info-row thead">
+                <div className="task-info-col theadcol tic-no">No.</div>
+                <div className="task-info-col theadcol">Task Name</div>
+                <div className="task-info-col theadcol">Points</div>
+                <div className="task-info-col theadcol">Actions</div>
+                <div className="task-info-col theadcol">Status</div>
               </div>
-            ))} */}
+              <div className="tasks-det-cont">
+                {tasks.map((t, ind) => {
+                  return (
+                    <div className="tasks-info-row" key={ind}>
+                      <div className="task-info-col tic-no">
+                        <div className="task-num">{ind + 1}</div>
+                      </div>
+                      <div className="task-info-col">{t.taskName}</div>
+                      <div className="task-info-col">{t.email}</div>
+                      <div className="task-info-col">
+                        <div className="task-exp-cont">
+                          <div
+                            className="task-submit-btn"
+                            style={{ color: "#fff" }}
+                            onClick={() => window.open(t.taskLink, "_blank")}
+                          >
+                            <div>View Task</div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="task-info-col">
+                        <div
+                          className="task-submit-btn"
+                          style={{ color: "#fff" }}
+                          onClick={() => {
+                            setData(t);
+                            setGiveFeedBack(true);
+                          }}
+                        >
+                          <div>Review</div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
