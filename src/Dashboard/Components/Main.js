@@ -89,7 +89,7 @@ const Main1 = () => {
       }
 
       const result = await response.json();
-      setTasks(result.submissions.tasks);
+      setTasks(result?.submissions?.tasks);
       setTasksLoading(false);
     } catch (error) {
       console.log("Error fetching data:", error.message);
@@ -97,6 +97,20 @@ const Main1 = () => {
     }
   };
 
+  useEffect(() => {
+    if (stage) {
+      if (stage !== "stage" && stage !== "tasks") {
+        console.log(stage);
+        window.location.href = `https://${window.location.hostname}/mern/dashboard`;
+        return <h1> Not a Valid URL !!!!</h1>;
+      } else if (stage === "stage") {
+        if (Cookies.get("user_email"))
+          window.location.href = `https://${window.location.hostname}/mern/campus/stage`;
+      } else if (stage === "tasks") {
+        setActive(3);
+      }
+    }
+  }, []);
   if (showForgot || otpSent)
     return (
       <ForgotPass
@@ -118,15 +132,6 @@ const Main1 = () => {
       />
     );
 
-  if (stage) {
-    if (stage !== "stage") {
-      window.location.href = `https://${window.location.hostname}/mern/dashboard`;
-      return <h1> Not a Valid URL !!!!</h1>;
-    } else {
-      if (Cookies.get("user_email"))
-        window.location.href = `https://${window.location.hostname}/mern/campus/stage`;
-    }
-  }
   return (
     <>
       {tasksLoading ? (
