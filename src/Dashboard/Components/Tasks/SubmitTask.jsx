@@ -5,10 +5,22 @@ const SubmitTask = ({ setSubmitTask, taskName }) => {
   const [taskLink, setTaskLink] = useState("");
   const [teamName, setTeamName] = useState("");
   const [teamMembers, setTeamMembers] = useState("");
+  const [disabled, setDisabled] = useState(false);
   const isgrp = taskName.includes("grpproject");
   async function submitTask() {
+    setDisabled(true);
     var response = {};
+    if (!taskLink) {
+      alert("Please Enter The Link");
+      setDisabled(false);
+      return;
+    }
     if (isgrp) {
+      if (!teamMembers || teamName) {
+        alert("Please Enter Group details");
+        setDisabled(false);
+        return;
+      }
       response = await fetch(
         "https://api.upskillmafia.com/api/v1/task/submit",
         {
@@ -49,6 +61,7 @@ const SubmitTask = ({ setSubmitTask, taskName }) => {
     } else {
       alert(data.error);
     }
+    setDisabled(false);
   }
   return (
     <div className="subt-cont">
@@ -98,7 +111,10 @@ const SubmitTask = ({ setSubmitTask, taskName }) => {
             </>
           )}
         </div>
-        <div className="subt-inner-cta" onClick={submitTask}>
+        <div
+          className={`subt-inner-cta ${disabled && "disable-btn"}`}
+          onClick={submitTask}
+        >
           Submit Task
           <svg
             xmlns="http://www.w3.org/2000/svg"

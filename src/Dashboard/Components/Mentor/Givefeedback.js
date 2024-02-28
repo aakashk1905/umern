@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import "../Tasks/SubmitTask.css";
 const Givefeedback = ({ setGiveFeedBack, data }) => {
   const [feedback, setFeedback] = useState("");
+  const [disabled, setDisabled] = useState(false);
 
   async function submitTask(status) {
     var response = {};
+    setDisabled(true);
 
     if (!feedback) {
       alert("Please Provide FEEDBACK");
@@ -54,6 +56,7 @@ const Givefeedback = ({ setGiveFeedBack, data }) => {
     } else {
       alert(data.error);
     }
+    setDisabled(false);
   }
   return (
     <div className="subt-cont">
@@ -77,9 +80,8 @@ const Givefeedback = ({ setGiveFeedBack, data }) => {
         <div className="subt-inner-mid">
           <div className="subt-mid-text" style={{ fontSize: "14px" }}>
             Task Status : {data.status}
-            <br />
-            ( Don't Do anything if status is already Approved or rejected....{" "}
-            <br />
+            <br />( Don't Do anything if status is already Approved or
+            rejected.... <br />
             If you get any such entries Inform me )
           </div>
           <div className="subt-mid-text">Feedback</div>
@@ -92,7 +94,7 @@ const Givefeedback = ({ setGiveFeedBack, data }) => {
         </div>
         <div className="subt-cta">
           <div
-            className="subt-inner-cta"
+            className={`subt-inner-cta ${disabled && "disable-btn"}`}
             onClick={() => submitTask("approved")}
           >
             Approve
@@ -111,7 +113,7 @@ const Givefeedback = ({ setGiveFeedBack, data }) => {
           </div>
 
           <div
-            className="subt-re"
+            className={`subt-re ${disabled && "disable-btn"}`}
             onClick={() => {
               submitTask("rejected");
             }}

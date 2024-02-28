@@ -6,9 +6,13 @@ import Register from "../User/Register";
 import Login from "../User/Login";
 import Givefeedback from "./Givefeedback";
 import reset from "../../Assests/reset.png";
+
+import taskss from "../Tasks.json";
 const FeedBack = () => {
   const [search, setSearch] = useState("");
+  const [filter, setFilter] = useState("");
   const [tasks, setTasks] = useState([]);
+  const [filteredTasks, setFilteredTasks] = useState([]);
   const [tasksLoading, setTasksLoading] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
   const [showSign, setShowSign] = useState(false);
@@ -29,6 +33,7 @@ const FeedBack = () => {
 
       const result = await response.json();
       setTasks(result.tasks);
+      setFilteredTasks(result.tasks);
       setTasksLoading(false);
     } catch (error) {
       console.log("Error fetching data:", error.message);
@@ -47,6 +52,7 @@ const FeedBack = () => {
 
       const result = await response.json();
       setTasks(result.tasks);
+      setFilteredTasks(result.tasks);
       setTasksLoading(false);
     } catch (error) {
       console.log("Error fetching data:", error.message);
@@ -85,28 +91,11 @@ const FeedBack = () => {
 
   return (
     <div className="mfb-cont">
+      {console.log(filteredTasks, tasks)}
       {giveFeedBack && (
         <Givefeedback setGiveFeedBack={setGiveFeedBack} data={data} />
       )}
 
-      <div className="task-stats-cont" style={{ display: "none" }}>
-        <div className="task-stat">
-          <div className="ts-head">24,385</div>
-          <div className="ts-det">Total Tasks</div>
-        </div>
-        <div className="task-stat">
-          <div className="ts-head">24,385</div>
-          <div className="ts-det">Total Tasks</div>
-        </div>
-        <div className="task-stat">
-          <div className="ts-head">24,385</div>
-          <div className="ts-det">Total Tasks</div>
-        </div>
-        <div className="task-stat">
-          <div className="ts-head">24,385</div>
-          <div className="ts-det">Total Tasks</div>
-        </div>
-      </div>
       <div className="task-details-cont">
         <div className="tdc-header">
           <div className="tdc-header-head">
@@ -136,15 +125,43 @@ const FeedBack = () => {
                 </svg>
               </div>
 
-              <div className="search-cta" onClick={fetchData1}>
+              <div
+                className="search-cta"
+                onClick={() => {
+                  fetchData1();
+                  setFilter("Select Task");
+                }}
+              >
                 <img src={reset} alt="reset" />
               </div>
+
+              <select
+                className="tdc-email-inp"
+                type="text"
+                value={filter}
+                onChange={(e) => {
+                  setFilter(e.target.value);
+                  if (e.target.value !== "Select Task") {
+                    const t = tasks.filter(
+                      (task) => task.taskName === e.target.value
+                    );
+                    setFilteredTasks(t);
+                  } else {
+                    setFilteredTasks(tasks);
+                  }
+                }}
+              >
+                <option>Select Task</option>
+                {taskss.map((task, ind) => {
+                  return <option key={ind}>{task.nameid}</option>;
+                })}
+              </select>
             </div>
           </div>
         </div>
 
         <div className="tdc-list-cont">
-          {!tasksLoading && tasks.length === 0 && (
+          {!tasksLoading && filteredTasks.length === 0 && (
             <div
               style={{
                 width: "100%",
@@ -154,9 +171,7 @@ const FeedBack = () => {
                 alignItems: "center",
               }}
             >
-              <div className="ts-det">
-                No Data Available Search By Email or check if Email is Correct
-              </div>
+              <div className="ts-det">No Data Available</div>
             </div>
           )}
 
@@ -173,7 +188,7 @@ const FeedBack = () => {
               <div className="ts-det">Data Loading ...</div>
             </div>
           )}
-          {!tasksLoading && (
+          {!tasksLoading && filteredTasks.length !== 0 && (
             <div className="tasks-info-cont">
               <div className="tasks-info-row thead">
                 <div className="task-info-col theadcol tic-no">No.</div>
@@ -183,7 +198,7 @@ const FeedBack = () => {
                 <div className="task-info-col theadcol">Status</div>
               </div>
               <div className="tasks-det-cont">
-                {tasks.map((t, ind) => {
+                {filteredTasks.map((t, ind) => {
                   return (
                     <div className="tasks-info-row" key={ind}>
                       <div className="task-info-col tic-no">

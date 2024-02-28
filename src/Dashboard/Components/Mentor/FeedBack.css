@@ -9,7 +9,9 @@
   box-sizing: border-box;
   position: relative;
 }
-
+option {
+  background-color: #131612;
+}
 .task-stats-cont {
   display: flex;
   width: 100%;
