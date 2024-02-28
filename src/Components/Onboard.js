@@ -72,7 +72,7 @@ const Onboard = ({ setShowSign }) => {
     urlencoded.append("wpNum", number);
     const now = new Date();
     const istTime = now.toLocaleString("en-US", { timeZone: "Asia/Kolkata" });
-    console.log(istTime);
+    // console.log(istTime);
     urlencoded.append("date", istTime);
 
     const requestOptions = {
@@ -86,7 +86,6 @@ const Onboard = ({ setShowSign }) => {
       "https://script.google.com/macros/s/AKfycbwodoPEkWGH8LCsVvU9knksm2Wsw1I9NjJJ8GJhv1Nf9fxABcz2hZ3mOkgQMcaC_JzS/exec",
       requestOptions
     );
-    console.log(response.JSON());
 
     if (response.ok) {
       alert("Registered successfully!!");
@@ -99,6 +98,10 @@ const Onboard = ({ setShowSign }) => {
       alert("Something Went Wrong Please Try Again");
       setDisabled(false);
     }
+
+    Cookies.set("user_name", name);
+    Cookies.set("user_email", email);
+    window.location.href = `https://${window.location.hostname}/onboard`;
   }
   return (
     <div className="login-cont">

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../Tasks/SubmitTask.css";
+import tasks from "../Tasks.json";
 const Givefeedback = ({ setGiveFeedBack, data }) => {
   const [feedback, setFeedback] = useState("");
 
@@ -57,7 +58,6 @@ const Givefeedback = ({ setGiveFeedBack, data }) => {
   }
   return (
     <div className="subt-cont">
-      {console.log(data)}
       <div className="subt-inner-cont">
         <div className="subt-inner-top">
           Submit Task

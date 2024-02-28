@@ -40,7 +40,7 @@ const Main1 = () => {
     fetchLeaderBoard();
     if (stage) {
       if (stage !== "stage" && stage !== "tasks") {
-        console.log(stage);
+        // console.log(stage);
         window.location.href = `https://${window.location.hostname}/mern/dashboard`;
         return <h1> Not a Valid URL !!!!</h1>;
       } else if (stage === "stage") {
