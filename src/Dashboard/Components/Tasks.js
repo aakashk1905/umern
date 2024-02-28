@@ -252,9 +252,17 @@ const Tasks = ({ tasks, user }) => {
                         <div
                           className="task-submit-btn"
                           style={{ color: "#fff" }}
-                          onClick={() =>
-                            window.open(updates[t.nameid]?.taskLink, "_blank")
-                          }
+                          onClick={() => {
+                            const feed = {
+                              feedbackk: "resubmit",
+                              feedback: updates[t.nameid]?.feedback || "",
+                              task: updates[t.nameid].taskLink,
+                              rejected: updates[t.nameid].status === "rejected",
+                            };
+                            setData(t.nameid);
+                            setFeedback(feed);
+                            setViewFeedback(true);
+                          }}
                         >
                           <div>View Task</div>
                           <img src={viewTask} alt="uploadTask" />
@@ -265,6 +273,7 @@ const Tasks = ({ tasks, user }) => {
                           style={{ color: "#51B846" }}
                           onClick={() => {
                             const feed = {
+                              feedbackk: "feedback",
                               feedback: updates[t.nameid]?.feedback || "",
                               task: updates[t.nameid].taskLink,
                               rejected: updates[t.nameid].status === "rejected",

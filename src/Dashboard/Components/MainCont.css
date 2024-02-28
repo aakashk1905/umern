@@ -412,6 +412,18 @@
   line-height: normal;
 }
 
+.mc-lb-mid::-webkit-scrollbar {
+  background: #fafafa;
+  border-radius: 8px;
+  width: 8px;
+  display: block;
+  position: absolute;
+}
+
+.mc-lb-mid::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+}
 .mc-lb-mid {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -422,7 +434,8 @@
   align-items: flex-start;
   gap: 20px;
   height: 100%;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   box-sizing: border-box;
 }
 .mc-rank-list-chip {

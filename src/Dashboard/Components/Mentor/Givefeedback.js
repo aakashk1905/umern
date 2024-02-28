@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "../Tasks/SubmitTask.css";
-import tasks from "../Tasks.json";
 const Givefeedback = ({ setGiveFeedBack, data }) => {
   const [feedback, setFeedback] = useState("");
 
