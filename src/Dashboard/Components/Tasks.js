@@ -48,7 +48,7 @@ const Tasks = ({ tasks, user }) => {
             </div>
             <div className="tl-mob-det-top-text">
               <img src={viewTask} alt="uploadTask" />
-              View Task
+              View/ReSubmit
             </div>
             <div className="tl-mob-det-top-text">
               <img src={viewFeedbackk} alt="uploadTask" />
@@ -264,7 +264,7 @@ const Tasks = ({ tasks, user }) => {
                             setViewFeedback(true);
                           }}
                         >
-                          <div>View Task</div>
+                          <div>View/ReSubmit</div>
                           <img src={viewTask} alt="uploadTask" />
                         </div>
                       ) : (
