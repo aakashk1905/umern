@@ -5,6 +5,7 @@ import ForgotPass from "../User/ForgotPass";
 import Register from "../User/Register";
 import Login from "../User/Login";
 import Givefeedback from "./Givefeedback";
+import reset from "../../Assests/reset.png";
 const FeedBack = () => {
   const [search, setSearch] = useState("");
   const [tasks, setTasks] = useState([]);
@@ -16,6 +17,24 @@ const FeedBack = () => {
   const [giveFeedBack, setGiveFeedBack] = useState(false);
   const [data, setData] = useState("");
 
+  const fetchbyEmail = async () => {
+    setTasksLoading(true);
+    try {
+      const response = await fetch(
+        `https://api.upskillmafia.com/api/v1/submissions/pending?email=${search}`
+      );
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const result = await response.json();
+      setTasks(result.tasks);
+      setTasksLoading(false);
+    } catch (error) {
+      console.log("Error fetching data:", error.message);
+      setTasksLoading(false);
+    }
+  };
   const fetchData1 = async () => {
     setTasksLoading(true);
     try {
@@ -102,7 +121,7 @@ const FeedBack = () => {
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search By Email"
               />
-              <div className="search-cta" onClick={fetchData1}>
+              <div className="search-cta" onClick={fetchbyEmail}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -115,6 +134,10 @@ const FeedBack = () => {
                     fill="white"
                   />
                 </svg>
+              </div>
+
+              <div className="search-cta" onClick={fetchData1}>
+                <img src={reset} alt="reset" />
               </div>
             </div>
           </div>
@@ -155,7 +178,7 @@ const FeedBack = () => {
               <div className="tasks-info-row thead">
                 <div className="task-info-col theadcol tic-no">No.</div>
                 <div className="task-info-col theadcol">Task Name</div>
-                <div className="task-info-col theadcol">Points</div>
+                <div className="task-info-col theadcol">Email</div>
                 <div className="task-info-col theadcol">Actions</div>
                 <div className="task-info-col theadcol">Status</div>
               </div>

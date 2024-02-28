@@ -59,7 +59,7 @@ const Givefeedback = ({ setGiveFeedBack, data }) => {
     <div className="subt-cont">
       <div className="subt-inner-cont">
         <div className="subt-inner-top">
-          Submit Task
+          Submit Feedback
           <svg
             onClick={() => setGiveFeedBack(false)}
             xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +75,15 @@ const Givefeedback = ({ setGiveFeedBack, data }) => {
           </svg>
         </div>
         <div className="subt-inner-mid">
+          <div className="subt-mid-text" style={{ fontSize: "14px" }}>
+            Task Status : {data.status}
+            <br />
+            ( Don't Do anything if status is already Approved or rejected....{" "}
+            <br />
+            If you get any such entries Inform me )
+          </div>
           <div className="subt-mid-text">Feedback</div>
+
           <textarea
             value={feedback}
             onChange={(e) => setFeedback(e.target.value)}

@@ -134,6 +134,9 @@
   align-items: center;
 }
 
+.search-cta img {
+  width: 100%;
+}
 .search-cta {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 16px;
@@ -141,6 +144,8 @@
   padding: 20px;
   box-sizing: border-box;
   transition: all 0.5s ease-out;
+  width: 64px;
+  height: 64px;
 }
 
 .search-cta:hover {
