@@ -1,7 +1,64 @@
 import React from "react";
-import bronze from "../Assests/broze Medal.svg";
+
 import "./Navbar.css";
+import bronze from "../Assests/broze Medal.svg";
+import silver from "../Assests/Silver medal.png";
+import gold from "../Assests/Gold medal.png";
+import diamond from "../Assests/diamond.png";
+import Emerald from "../Assests/Emerald.png";
+import platinum from "../Assests/platinum medal.png";
 const Navbar = ({ setIsOpen, name, active, user }) => {
+  const levels = {
+    "Bronze III": {
+      img: bronze,
+    },
+    "Bronze II": {
+      img: bronze,
+    },
+    "Bronze I": {
+      img: bronze,
+    },
+    "Silver III": {
+      img: silver,
+    },
+    "Silver II": {
+      img: silver,
+    },
+    "Silver I": {
+      img: silver,
+    },
+    "Gold III": {
+      img: gold,
+    },
+    "Gold II": {
+      img: gold,
+    },
+    "Gold I": {
+      img: gold,
+    },
+    "Platinum III": {
+      img: platinum,
+    },
+    "Platinum II": {
+      img: platinum,
+    },
+    "Platinum I": {
+      img: platinum,
+    },
+    "Diamond III": {
+      img: diamond,
+    },
+    "Diamond II": {
+      img: diamond,
+    },
+    "Diamond I": {
+      img: diamond,
+    },
+    Emarald: {
+      img: Emerald,
+    },
+  };
+
   return (
     <div className="nb-cont">
       <div className="nb-name">{name ? name : "User"}</div>
@@ -10,7 +67,10 @@ const Navbar = ({ setIsOpen, name, active, user }) => {
           <div className="mc-tr-top-mid" style={{ padding: "7px" }}>
             <div className="tr-mid" style={{ justifyContent: "center" }}>
               <div className="tr-mid-bronze-img mc-trmbi">
-                <img src={bronze} alt="bronze" />
+                <img
+                  src={levels[user?.userDetails?.level]?.img || bronze}
+                  alt="bronze"
+                />
               </div>
               <div>
                 <div className="mc-tr-mid-text">League</div>

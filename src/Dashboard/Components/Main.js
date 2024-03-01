@@ -12,6 +12,7 @@ import { Ripple } from "react-awesome-spinners";
 import ForgotPass from "./User/ForgotPass";
 import Register from "./User/Register";
 import Login from "./User/Login";
+import LeaguePopup from "./Leagues/LeaguePopup";
 
 const Main1 = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -28,6 +29,7 @@ const Main1 = () => {
   const [tasksLoading, setTasksLoading] = useState(true);
   const [active, setActive] = useState(1);
   const email = Cookies.get("user_email");
+  const [seeLeagues, setSeeLeagues] = useState(false);
   const { stage } = useParams();
 
   useEffect(() => {
@@ -139,6 +141,7 @@ const Main1 = () => {
         </div>
       ) : (
         <div className="main-cont">
+          {seeLeagues && <LeaguePopup setSeeLeagues={setSeeLeagues} />}
           {wpPop && (
             <div className="wp-pop-outer">
               <WhatsappPopup email={email} setwpPop={setwpPop} />
@@ -173,6 +176,7 @@ const Main1 = () => {
             {active === 1 && (
               <div className="main-data-cont">
                 <MainCont
+                  setSeeLeagues={setSeeLeagues}
                   tasksLoading={tasksLoading}
                   setActive={setActive}
                   user={user}
@@ -188,7 +192,12 @@ const Main1 = () => {
             )}
             {active === 3 && (
               <div className="main-data-cont">
-                <Tasks tasksLoading={tasksLoading} tasks={tasks} user={user} />
+                <Tasks
+                  tasksLoading={tasksLoading}
+                  tasks={tasks}
+                  user={user}
+                  setSeeLeagues={setSeeLeagues}
+                />
               </div>
             )}
           </div>

@@ -3,6 +3,12 @@ import "./Task.css";
 
 import progressimg from "../Assests/progressimg.png";
 import bronze from "../Assests/broze Medal.svg";
+import silver from "../Assests/Silver medal.png";
+import gold from "../Assests/Gold medal.png";
+import diamond from "../Assests/diamond.png";
+import Emerald from "../Assests/Emerald.png";
+import platinum from "../Assests/platinum medal.png";
+
 import viewTask from "../Assests/viewtask.svg";
 import viewFeedbackk from "../Assests/viewfeedback.png";
 import uploadTask from "../Assests/uploadtask.png";
@@ -11,7 +17,7 @@ import taskss from "./Tasks.json";
 import level from "./Levels.json";
 import SubmitTask from "./Tasks/SubmitTask";
 import ViewFeedback from "./Tasks/ViewFeedback";
-const Tasks = ({ tasks, user }) => {
+const Tasks = ({ tasks, user, setSeeLeagues }) => {
   const [submitTask, setSubmitTask] = useState(false);
   const [viewFeedback, setViewFeedback] = useState(false);
   const [feedback, setFeedback] = useState("");
@@ -20,6 +26,57 @@ const Tasks = ({ tasks, user }) => {
   tasks?.forEach((task) => {
     updates[task.taskName] = task;
   });
+
+  const levels = {
+    "Bronze III": {
+      img: bronze,
+    },
+    "Bronze II": {
+      img: bronze,
+    },
+    "Bronze I": {
+      img: bronze,
+    },
+    "Silver III": {
+      img: silver,
+    },
+    "Silver II": {
+      img: silver,
+    },
+    "Silver I": {
+      img: silver,
+    },
+    "Gold III": {
+      img: gold,
+    },
+    "Gold II": {
+      img: gold,
+    },
+    "Gold I": {
+      img: gold,
+    },
+    "Platinum III": {
+      img: platinum,
+    },
+    "Platinum II": {
+      img: platinum,
+    },
+    "Platinum I": {
+      img: platinum,
+    },
+    "Diamond III": {
+      img: diamond,
+    },
+    "Diamond II": {
+      img: diamond,
+    },
+    "Diamond I": {
+      img: diamond,
+    },
+    Emarald: {
+      img: Emerald,
+    },
+  };
 
   return (
     <div className="tasks-cont">
@@ -563,7 +620,7 @@ const Tasks = ({ tasks, user }) => {
           <div className="tr-top-expoints">
             <img src={expcoin} alt="expcoin"></img>
             Experience Points!
-            <svg
+            {/* <svg
               xmlns="http://www.w3.org/2000/svg"
               width="18"
               height="18"
@@ -589,12 +646,15 @@ const Tasks = ({ tasks, user }) => {
                   <rect width="18" height="18" fill="white" />
                 </clipPath>
               </defs>
-            </svg>
+            </svg> */}
           </div>
           <div className="tr-top-mid">
             <div className="tr-mid">
               <div className="tr-mid-bronze-img">
-                <img src={bronze} alt="bronze" />
+                <img
+                  src={levels[user?.userDetails.level]?.img || bronze}
+                  alt="bronze"
+                />
               </div>
               <div>
                 <div className="tr-mid-text">League</div>
@@ -631,6 +691,8 @@ const Tasks = ({ tasks, user }) => {
               height="24"
               viewBox="0 0 24 24"
               fill="none"
+              onClick={() => setSeeLeagues(true)}
+              style={{ cursor: "pointer" }}
             >
               <g clipPath="url(#clip0_194_882)">
                 <path

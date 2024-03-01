@@ -7,12 +7,68 @@ import goldcup from "../Assests/goldcup.png";
 import silvercup from "../Assests/silvercup.png";
 import bronzecup from "../Assests/bronzecup.png";
 import bronze from "../Assests/broze Medal.svg";
+import silver from "../Assests/Silver medal.png";
+import gold from "../Assests/Gold medal.png";
+import diamond from "../Assests/diamond.png";
+import Emerald from "../Assests/Emerald.png";
+import platinum from "../Assests/platinum medal.png";
 
 import fire from "../Assests/fire.gif";
 
 import StreakCalendar from "./StreakCalendar";
-const MainCont = ({ user, leaderboard }) => {
+const MainCont = ({ user, leaderboard, setSeeLeagues }) => {
   const [st, setSt] = useState(user ? user.userDetails.streakData.streak : 0);
+
+  const levels = {
+    "Bronze III": {
+      img: bronze,
+    },
+    "Bronze II": {
+      img: bronze,
+    },
+    "Bronze I": {
+      img: bronze,
+    },
+    "Silver III": {
+      img: silver,
+    },
+    "Silver II": {
+      img: silver,
+    },
+    "Silver I": {
+      img: silver,
+    },
+    "Gold III": {
+      img: gold,
+    },
+    "Gold II": {
+      img: gold,
+    },
+    "Gold I": {
+      img: gold,
+    },
+    "Platinum III": {
+      img: platinum,
+    },
+    "Platinum II": {
+      img: platinum,
+    },
+    "Platinum I": {
+      img: platinum,
+    },
+    "Diamond III": {
+      img: diamond,
+    },
+    "Diamond II": {
+      img: diamond,
+    },
+    "Diamond I": {
+      img: diamond,
+    },
+    Emarald: {
+      img: Emerald,
+    },
+  };
 
   useEffect(() => {
     if (user) {
@@ -80,7 +136,10 @@ const MainCont = ({ user, leaderboard }) => {
               <div className="mc-tr-top-mid">
                 <div className="tr-mid">
                   <div className="tr-mid-bronze-img mc-trmbi">
-                    <img src={bronze} alt="bronze" />
+                    <img
+                      src={levels[user?.userDetails?.level]?.img || bronze}
+                      alt="bronze"
+                    />
                   </div>
                   <div>
                     <div className="mc-tr-mid-text">League</div>
@@ -117,6 +176,7 @@ const MainCont = ({ user, leaderboard }) => {
                   height="24"
                   viewBox="0 0 24 24"
                   fill="none"
+                  onClick={() => setSeeLeagues(true)}
                 >
                   <g clipPath="url(#clip0_194_882)">
                     <path
@@ -291,6 +351,7 @@ const MainCont = ({ user, leaderboard }) => {
               height="18"
               viewBox="0 0 18 18"
               fill="none"
+              onClick={() => setSeeLeagues(true)}
             >
               <g clipPath="url(#clip0_278_2377)">
                 <path
