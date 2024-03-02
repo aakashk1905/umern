@@ -33,7 +33,14 @@ const ViewFeedback = ({
           <div className="subt-cta">
             <div
               className="subt-inner-cta"
-              onClick={() => window.open(feedback.task, "_blank")}
+              onClick={() => {
+                if (feedback.task.startsWith("https://")) {
+                  window.open(feedback.task, "_blank");
+                } else {
+                  var fullURL = "https://" + feedback.task;
+                  window.open(fullURL, "_blank");
+                }
+              }}
             >
               View Task
               <svg
@@ -95,9 +102,17 @@ const ViewFeedback = ({
           </div>
 
           <div className="subt-cta">
+            {console.log(feedback.task)}
             <div
               className="subt-inner-cta"
-              onClick={() => window.open(feedback.task, "_blank")}
+              onClick={() => {
+                if (feedback.task.startsWith("https://")) {
+                  window.open(feedback.task, "_blank");
+                } else {
+                  var fullURL = "https://" + feedback.task;
+                  window.open(fullURL, "_blank");
+                }
+              }}
             >
               View Task
               <svg

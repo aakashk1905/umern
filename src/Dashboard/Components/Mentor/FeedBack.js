@@ -211,7 +211,14 @@ const FeedBack = () => {
                           <div
                             className="task-submit-btn"
                             style={{ color: "#fff" }}
-                            onClick={() => window.open(t.taskLink, "_blank")}
+                            onClick={() => {
+                              if (t.taskLink.startsWith("https://")) {
+                                window.open(t.taskLink, "_blank");
+                              } else {
+                                var fullURL = "https://" + t.taskLink;
+                                window.open(fullURL, "_blank");
+                              }
+                            }}
                           >
                             <div>View Task</div>
                           </div>
