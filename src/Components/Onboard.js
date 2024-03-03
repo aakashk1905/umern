@@ -33,7 +33,7 @@ const Onboard = ({ setShowSign }) => {
                 "https://s3.ap-south-1.amazonaws.com/upskillmafia.com/onboard.mp4",
               ],
               buttonValues: {
-                1: ["BhgA7GcBedGJVRqJASg651"],
+                1: ["LNdogn9isvF1L39KOw36J5"],
               },
             },
           }),
