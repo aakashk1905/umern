@@ -111,7 +111,7 @@ const Leftbar = ({ setIsOpen, name, setActive, active, isMentor }) => {
           </div>
           <div
             className={`lb-menu ${active === 4 ? "lb-menu-active" : ""}`}
-            onClick={() => alert("Coming Soon !!!")}
+            onClick={() => alert("Opens After You Complete The Course!!!")}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

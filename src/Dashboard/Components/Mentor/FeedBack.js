@@ -10,7 +10,7 @@ import reset from "../../Assests/reset.png";
 import taskss from "../Tasks.json";
 const FeedBack = () => {
   const [search, setSearch] = useState("");
-  const [filter, setFilter] = useState("");
+  const [filter, setFilter] = useState(Cookies.get("mentor_filter") || "");
   const [tasks, setTasks] = useState([]);
   const [filteredTasks, setFilteredTasks] = useState([]);
   const [tasksLoading, setTasksLoading] = useState(false);
@@ -33,7 +33,14 @@ const FeedBack = () => {
 
       const result = await response.json();
       setTasks(result.tasks);
-      setFilteredTasks(result.tasks);
+      if (Cookies.get("mentor_filter")) {
+        const t = result?.tasks?.filter(
+          (task) => task.taskName === Cookies.get("mentor_filter")
+        );
+        setFilteredTasks(t);
+      } else {
+        setFilteredTasks(result.tasks);
+      }
       setTasksLoading(false);
     } catch (error) {
       console.log("Error fetching data:", error.message);
@@ -52,7 +59,15 @@ const FeedBack = () => {
 
       const result = await response.json();
       setTasks(result.tasks);
-      setFilteredTasks(result.tasks);
+
+      if (Cookies.get("mentor_filter")) {
+        const t = result?.tasks?.filter(
+          (task) => task.taskName === Cookies.get("mentor_filter")
+        );
+        setFilteredTasks(t);
+      } else {
+        setFilteredTasks(result.tasks);
+      }
       setTasksLoading(false);
     } catch (error) {
       console.log("Error fetching data:", error.message);
@@ -91,7 +106,6 @@ const FeedBack = () => {
 
   return (
     <div className="mfb-cont">
-      {console.log(filteredTasks, tasks)}
       {giveFeedBack && (
         <Givefeedback setGiveFeedBack={setGiveFeedBack} data={data} />
       )}
@@ -130,6 +144,7 @@ const FeedBack = () => {
                 onClick={() => {
                   fetchData1();
                   setFilter("Select Task");
+                  Cookies.remove("mentor_filter");
                 }}
               >
                 <img src={reset} alt="reset" />
@@ -142,11 +157,13 @@ const FeedBack = () => {
                 onChange={(e) => {
                   setFilter(e.target.value);
                   if (e.target.value !== "Select Task") {
+                    Cookies.set("mentor_filter", e.target.value);
                     const t = tasks.filter(
                       (task) => task.taskName === e.target.value
                     );
                     setFilteredTasks(t);
                   } else {
+                    Cookies.remove("mentor_filter");
                     setFilteredTasks(tasks);
                   }
                 }}
