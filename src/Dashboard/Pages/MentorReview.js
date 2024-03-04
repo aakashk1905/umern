@@ -4,6 +4,7 @@ import Leftbar from "../Components/Leftbar";
 import Navbar from "../Components/Navbar";
 import Cookies from "js-cookie";
 import FeedBack from "../Components/Mentor/FeedBack";
+import AllSubs from "../Components/Mentor/AllSubs";
 const MentorReview = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [user, setUser] = useState("");
@@ -40,7 +41,7 @@ const MentorReview = () => {
   if (redirect) {
     return <>Redirecting....</>;
   }
-  
+
   return (
     <div className="main-cont">
       {isOpen && (
@@ -70,9 +71,16 @@ const MentorReview = () => {
             active={active}
           />
         </div>
-        <div className="main-data-cont">
-          <FeedBack />
-        </div>
+        {active === 1 && (
+          <div className="main-data-cont">
+            <FeedBack />
+          </div>
+        )}
+        {active === 2 && (
+          <div className="main-data-cont">
+            <AllSubs />
+          </div>
+        )}
       </div>
     </div>
   );
