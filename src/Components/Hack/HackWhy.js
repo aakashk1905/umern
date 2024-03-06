@@ -15,7 +15,7 @@ const HackWhy = () => {
                 <div className='why-card1'></div>
                 <div className='why-card'>
                     <img className='why-card-img' src={whyport} alt='cardimg' />
-                    <div className='why-card-head'>Boost UI/UX Portfolio</div>
+                    <div className='why-card-head'>Boost Your Portfolio</div>
                     <div className='why-card-text'> Solve Real world Problems </div>
                 </div>
                 <div className='why-card'>
@@ -93,7 +93,7 @@ const HackWhy = () => {
                 <div style={{ padding: '30px' }}>
                     <div className='why-card'>
                         <img className='why-card-img' src={whyport} alt='cardimg' />
-                        <div className='why-card-head'>Boost UI/UX Portfolio</div>
+                        <div className='why-card-head'>Boost Your Portfolio</div>
                         <div className='why-card-text'> Solve Real world Problems </div>
                     </div>
                 </div>

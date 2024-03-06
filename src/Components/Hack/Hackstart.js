@@ -12,7 +12,7 @@ const Hackstart = ({ setShowForm }) => {
                     <div className='hack-get-st-card'>
                         <div className='hack-get-st-card-num'>1</div>
                         <div className='hack-reg-now'>Register <br /><b style={{ color: '#e3d34b' }}>Your Team!</b></div>
-                        <div className='hack-reg-text'>  You can Register in a team of 2-4 members, here.</div>
+                        <div className='hack-reg-text'>  You can Register in a team of 3-4 members, here.</div>
                         <div className='hack-reg-btn' onClick={() => setShowForm(true)}>Register Now</div>
                         {/* <div className='hack-reg-btn' onClick={() => alert("Slots Full!!! Wait till Next Hackathon")}>Register Now</div> */}
                     </div>
@@ -25,7 +25,7 @@ const Hackstart = ({ setShowForm }) => {
                     <div className='hack-get-st-card'>
                         <div className='hack-get-st-card-num'>3</div>
                         <div className='hack-reg-now'>Submit <br /><b style={{ color: '#e3d34b' }}>Hackathon Task</b></div>
-                        <div className='hack-reg-text'> Work along with your team and Submit the task on 26 November</div>
+                        <div className='hack-reg-text'> Work along with your team and Submit the task on 10th March</div>
                         {/* <div className='hack-reg-btn'>Register Now</div> */}
                     </div>
                 </div>
@@ -35,7 +35,7 @@ const Hackstart = ({ setShowForm }) => {
                 <div className='hackk-work-together-main-cont'>
                     <div className='hackk-work-together-main-left'><img src={tog} alt='tog'></img></div>
                     <div className='hackk-work-together-main-right'>
-                        <div className='hackk-work-together-rigth-head'>Buckle Up, Designers!</div>
+                        <div className='hackk-work-together-rigth-head'>Buckle Up, Developers!</div>
                         <div className='hackk-work-together-rigth-text'>You will be joining the UpSkill Mafia Virtual Campus ,
                         and working along With Your team mates from start to finish!</div>
                     </div>
