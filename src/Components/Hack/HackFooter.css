@@ -1,0 +1,135 @@
+.h-footer-cont {
+  width: 100vw;
+  height: 200px;
+  flex-shrink: 0;
+  background: #1a1a1a;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.f-hack-head {
+  background: linear-gradient(180deg, #e3d34b 0%, #53e544 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.f-hack-contact {
+  color: #fff;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.f-hack-contact a {
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+@media screen and (max-width: 768px) {
+  .h-footer-cont {
+    width: 100vw;
+    height: auto;
+    flex-shrink: 0;
+    background: #1a1a1a;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    gap:20px;
+    padding: 20px 0;
+  }
+  .f-hack-head {
+    background: linear-gradient(180deg, #e3d34b 0%, #53e544 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .f-hack-contact {
+    color: #fff;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  .f-hack-contact a {
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .h-footer-cont {
+    width: 100vw;
+    height: auto;
+    flex-shrink: 0;
+    background: #1a1a1a;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    gap:20px;
+    padding: 20px 0;
+  }
+  .f-hack-head {
+    background: linear-gradient(180deg, #e3d34b 0%, #53e544 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .f-hack-contact {
+    color: #fff;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  .f-hack-contact a {
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+}

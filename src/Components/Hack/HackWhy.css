@@ -1,0 +1,252 @@
+.hack-why-cont {
+  width: 100vw;
+  height: 600px;
+  flex-shrink: 0;
+  background: #e3d34b;
+  display: flex;
+  justify-content: space-evenly;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+}
+.why-head-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.why-head {
+  width: fit-content;
+  background: linear-gradient(90deg, #000 2.59%, #0f9e00 126.42%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: Archivo;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.why-cards-cont {
+  display: flex;
+  gap: 28px;
+  width: 100vw;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+.why-card1 {
+  width: clamp(200px, 20vw, 301px);
+  height: 427px;
+  flex-shrink: 0;
+  border-radius: 32px;
+  border: 3px solid rgba(170, 255, 161, 0.72);
+  background: url("../../Assests/whybulb.png"), lightgray 50% / cover no-repeat;
+  background-position: center;
+  /* background-size: auto;
+  background-repeat: no-repeat; */
+}
+
+.why-card {
+  box-shadow: 10px 4px 4px 0px #0f9900;
+  border-radius: 20px;
+  border: 1px solid #bdbdbd;
+  background: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.81) 100%);
+  width: clamp(200px, 22vw, 286px);
+  height: 419px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.why-card-img {
+  width: 148px;
+  aspect-ratio: 1/1;
+}
+.why-card-head {
+  color: #fafafa;
+  text-align: center;
+  font-family: Archivo;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.why-card-text {
+  padding: 0 20px;
+  color: #fff286;
+  text-align: center;
+  font-family: Aoboshi One;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.hackk-why-car{
+  display: none;
+}
+
+
+
+@media screen and (max-width: 1080px) {
+  .hack-why-cont {
+    width: 100vw;
+    height: 600px;
+    flex-shrink: 0;
+    background: #e3d34b;
+    display: flex;
+    justify-content: space-evenly;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .why-head-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .why-head {
+    font-size: 30px;
+    font-weight: 800;
+    font-family: Archivo;
+  }
+
+  .why-cards-cont {
+    display: none;
+    gap: 28px;
+    width: 100vw;
+    overflow: scroll;
+    justify-content: center;
+    align-items: center;
+  }
+  .carousel-hack-why {
+    width: 100vw;
+  }
+
+  .hackk-why-car{
+    display: flex;
+  }
+  .why-card {
+    box-shadow: 10px 4px 4px 0px #0f9900;
+    border-radius: 20px;
+    border: 1px solid #bdbdbd;
+    background: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.81) 100%);
+    width: 290px;
+    height: 419px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .why-card-img {
+    width: 148px;
+    aspect-ratio: 1/1;
+  }
+  .why-card-head {
+    color: #fafafa;
+    text-align: center;
+    font-family: Archivo;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .why-card-text {
+    padding: 0 20px;
+    color: #fff286;
+    text-align: center;
+    font-family: Aoboshi One;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .hack-why-cont {
+    width: 100vw;
+    height: 600px;
+    flex-shrink: 0;
+    background: #e3d34b;
+    display: flex;
+    justify-content: space-evenly;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .why-head-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .why-head {
+    font-size: 30px;
+    font-weight: 800;
+    font-family: Archivo;
+  }
+
+  .why-cards-cont {
+    display: none;
+    gap: 28px;
+    width: 100vw;
+    overflow: scroll;
+    justify-content: center;
+    align-items: center;
+  }
+  .carousel-hack-why {
+    width: 100vw;
+  }
+
+  .hackk-why-car{
+    display: flex;
+  }
+  .why-card {
+    box-shadow: 10px 4px 4px 0px #0f9900;
+    border-radius: 20px;
+    border: 1px solid #bdbdbd;
+    background: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.81) 100%);
+    width: 290px;
+    height: 419px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .why-card-img {
+    width: 148px;
+    aspect-ratio: 1/1;
+  }
+  .why-card-head {
+    color: #fafafa;
+    text-align: center;
+    font-family: Archivo;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .why-card-text {
+    padding: 0 20px;
+    color: #fff286;
+    text-align: center;
+    font-family: Aoboshi One;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}

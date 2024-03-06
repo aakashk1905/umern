@@ -1,0 +1,233 @@
+.f-page {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+.form-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+}
+.form-logo-cont {
+  position: absolute;
+  display: flex;
+  width: 100vw;
+  padding: 0 30px;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+}
+.forrm-head {
+  font-family: Archivo;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 139.3%; /* 66.864px */
+  text-transform: capitalize;
+  background: linear-gradient(90deg, #e3d34b 2.3%, #53e544 111.08%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  visibility: hidden;
+}
+.form-close {
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-logo-cont img {
+  width: 80px;
+}
+.form-reg-head {
+  position: absolute;
+  bottom: 105%;
+  color: #e2e2e2;
+  font-family: Poppins;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 139.3%;
+}
+.form-reg-head1 {
+  position: absolute;
+  bottom: 102%;
+  color: #e2e2e2;
+  font-family: Poppins;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 139.3%;
+}
+.form-close img {
+  width: 50px;
+  transition: all 0.4s ease-out;
+}
+.form-close img:hover {
+  width: 40px;
+}
+.form-container::before {
+  content: "";
+  background-image: url("../../Assests/formbg.png");
+  filter: blur(12px);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  /* The following styles stretch the pseudo-element to cover the container */
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  right: 0%;
+  bottom: 0%;
+  z-index: -1;
+}
+.s-page-btn-cont {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+}
+
+.form-cont {
+  position: relative;
+  width: 450px;
+  height: auto;
+  padding: 30px 0;
+  display: flex;
+  /* background-image:linear-gradient(to bottom right, rgba(255,255,255,0.2), rgba(255,255,255,0)); */
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  /* filter: blur(10px); */
+  box-shadow: 10px 10px 10px rgba(30, 30, 30, 0.5);
+  border-radius: 13px;
+  border: 1px solid #fff286;
+  background: #161616;
+}
+
+.f-page label {
+  color: #53e544;
+  font-family: Poppins;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 139.3%;
+}
+
+.f-page h2 {
+  color: white;
+  text-align: center;
+  font-size: 25px;
+  margin-top: 0;
+}
+
+.f-page input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: 2px solid #ffe827;
+  background: rgba(217, 217, 217, 0);
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  outline: none;
+  background: transparent;
+}
+
+.f-page button {
+  border-radius: 6px;
+  background: rgba(227, 211, 75, 0.92);
+  display: flex;
+  width: 131px;
+  height: 39px;
+  align-self: flex-end;
+  padding: 20px 35px;
+  font-family: Poppins;
+  font-size:18px;
+  font-weight: 600;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  outline: none;
+}
+
+.f-page button:active {
+  transform: scale(0.9)
+}
+.f-page input::placeholder {
+  color: #80c2a3;
+  font-size: 14px;
+}
+
+/* Media queries for smaller screens */
+@media screen and (max-width: 600px) {
+  .form-cont {
+    width: 90vw;
+    height: auto;
+  }
+  .forrm-head {
+    display: none;
+  }
+  .f-page input[type="text"],
+  input[type="email"],
+  input[type="number"] {
+    padding: 8px;
+    margin: 4px 0;
+    border-radius: 10px;
+
+    text-align: center;
+  }
+  .form-logo-cont {
+    padding: 0 10px;
+  }
+  .f-page button {
+    padding: 10px 16px;
+  }
+}
+@media screen and (max-width: 600px) {
+  
+
+  .form-cont {
+    height: auto;
+    
+  }
+  .forrm-head {
+    display: none;
+  }
+  .form-reg-head{
+    bottom:105%;
+  
+  }
+  .form-reg-head1{
+    bottom:102%;
+    font-size: 8px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .f-page{
+    gap:10px;
+  }
+  .f-page input[type="text"],
+  input[type="email"],
+  input[type="number"] {
+    padding: 8px;
+    margin: 4px 0;
+    border-radius: 10px;
+
+    /* text-align: center; */
+  }
+  .form-logo-cont {
+    padding: 0 10px;
+  }
+  .f-page button {
+    padding: 10px 16px;
+  }
+}

@@ -1,0 +1,118 @@
+.succ-cont {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:10px;
+}
+.succ-sub-cont {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap:10px;
+}
+
+.succ-cont::before {
+  content: "";
+  background-image: url("../Assests/formbg.png");
+  filter: blur(12px);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  /* The following styles stretch the pseudo-element to cover the container */
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  right: 0%;
+  bottom: 0%;
+  z-index: -1;
+}
+
+.succ-head {
+  color: #e4d65a;
+  font-family: Archivo;
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 139.3%; /* 33.432px */
+  text-transform: capitalize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.succ-logo {
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.succ-logo img {
+  width: 200px;
+  height: auto;
+}
+
+.succ-hack {
+  font-family: Archivo;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 139.3%; /* 50.148px */
+  text-transform: capitalize;
+  background: linear-gradient(90deg, #e3d34b 2.3%, #53e544 111.08%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.succ-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+  max-width: 90vw;
+  font-size: 20px;
+  font-family: poppins;
+  height: auto;
+  text-align: center;
+  color: white;
+}
+
+.succ-conttt {
+  width: auto !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.succ-conttt a {
+  margin: 0;
+}
+.succ-subcontainer {
+  width: clamp(200px, 90vw, 400px);
+}
+.succ-what {
+  border-radius: 15px;
+  border: 4px solid white;
+  background: linear-gradient(169deg, #1faf38 7.84%, #60d669 91.17%);
+  box-shadow: 0px 5px 50px -15px rgba(240, 162, 2, 0.5);
+  display: flex;
+  padding: 15px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  text-align: center;
+  color: #fff;
+  font-family: Open Sans;
+  font-size: clamp(18px,3vw,22px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+

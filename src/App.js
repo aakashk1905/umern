@@ -14,6 +14,8 @@ import Main from "./Pages/Main";
 import Main1 from "./Dashboard/Components/Main";
 import Cookies from "js-cookie";
 import MentorReview from "./Dashboard/Pages/MentorReview";
+import Hackathon from "./Pages/Hackathon";
+import Success from "./Pages/Success";
 
 function RedirectComponentMern() {
   const width = window.innerWidth;
@@ -135,6 +137,8 @@ function App() {
           <Route path="dashboard" element={<Main1 />} />
           <Route path="dashboard/mentor/review" element={<MentorReview />} />
           <Route path="dashboard/:stage" element={<Main1 />} />
+          <Route path="hackathon" element={<Hackathon />} />
+          <Route path="success" element={<Success />} />
           <Route path="*" element={<Navigate replace to="/" />} />
         </Route>
       </Routes>

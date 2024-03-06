@@ -1,0 +1,378 @@
+.hack-rew-cont {
+  width: 100vw;
+  height: fit-content;
+  display: flex;
+  padding: 80px 0 30px 0;
+}
+.hack-rew-inner-cont {
+  display: flex;
+  gap:60px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.hack-rew-head-cont {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+.hack-rew-head {
+  position: relative;
+  background: linear-gradient(90deg, #e3d34b 10.96%, #53e544 124.5%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: Archivo;
+  font-size: 52.641px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.hack-rew-card-cont {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  border-radius: 29.611px;
+  background: rgba(3, 31, 0, 0.96);
+  box-shadow: 12.3378px 3.29008px 4.93512px 0px #e3d34b;
+  width: 70%;
+  aspect-ratio: 2/1;
+  flex-shrink: 0;
+}
+
+.hack-re-card-left {
+  width: 55%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hack-re-card-left img {
+  width: 80%;
+  aspect-ratio: 1/1;
+}
+.hack-re-card-right {
+  width: 45%;
+  height: 100%;
+  display: flex;
+  gap:20px;
+  /* padding:20px; */
+  flex-direction: column;
+   justify-content: space-evenly;
+  /*align-items: center; */
+}
+.hack-re-card-text-head {
+  color: #ffc530;
+  font-family: Archivo;
+  font-size: 45.239px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.hack-re-card-text {
+  color: #e2e2e2;
+  font-family: Archivo;
+  font-size: 25.901px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 139.3%; /* 45.831px */
+}
+.hack-re-card-text-cont {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10.16px;
+  width: 95%;
+}
+
+
+@media screen and (max-width: 1080px) {
+  .hack-rew-cont {
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    padding: 50px 0 30px 0;
+  }
+  .hack-rew-inner-cont {
+    display: flex;
+    gap:60px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .hack-rew-head-cont {
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+  }
+  .hack-rew-head {
+    position: relative;
+    background: linear-gradient(90deg, #e3d34b 10.96%, #53e544 124.5%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: Archivo;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+  }
+  
+  .hack-rew-card-cont {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    border-radius: 29.611px;
+    padding: 30px;
+    border: 1px solid #E3D34B;
+    background: rgba(3, 31, 0, 0.96);
+    box-shadow: 12.3378px 3.29008px 4.93512px 0px #e3d34b;
+    width: 85%;
+    height:auto;
+    flex-direction: row;
+  }
+  
+  .hack-re-card-left {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hack-re-card-left img {
+    width: 90%;
+    aspect-ratio: 1/1;
+  }
+  .hack-re-card-right {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap:20px;
+    /* padding:20px; */
+    flex-direction: column;
+     justify-content: space-evenly;
+     position: relative;
+    /*align-items: center; */
+  }
+  .hack-re-card-text-head {
+    color: #ffc530;
+    font-family: Archivo;
+    font-size: 45.239px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .hack-re-card-text {
+    width:100%;
+    color: #e2e2e2;
+    font-family: Archivo;
+    font-size: 27px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 139.3%; /* 45.831px */
+  }
+  .hack-re-card-text-cont {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10.16px;
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hack-rew-cont {
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    padding: 50px 0 30px 0;
+  }
+  .hack-rew-inner-cont {
+    display: flex;
+    gap:60px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .hack-rew-head-cont {
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+  }
+  .hack-rew-head {
+    position: relative;
+    background: linear-gradient(90deg, #e3d34b 10.96%, #53e544 124.5%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: Archivo;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+  }
+  
+  .hack-rew-card-cont {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    border-radius: 29.611px;
+    padding: 30px;
+    border: 1px solid #E3D34B;
+    background: rgba(3, 31, 0, 0.96);
+    box-shadow: 12.3378px 3.29008px 4.93512px 0px #e3d34b;
+    width: 85%;
+    height:auto;
+    flex-direction: column;
+  }
+  
+  .hack-re-card-left {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hack-re-card-left img {
+    width: 90%;
+    aspect-ratio: 1/1;
+  }
+  .hack-re-card-right {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap:20px;
+    /* padding:20px; */
+    flex-direction: column;
+     justify-content: space-evenly;
+     position: relative;
+    /*align-items: center; */
+  }
+  .hack-re-card-text-head {
+    color: #ffc530;
+    font-family: Archivo;
+    font-size: 45.239px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .hack-re-card-text {
+    width:100%;
+    color: #e2e2e2;
+    font-family: Archivo;
+    font-size: 27px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 139.3%; /* 45.831px */
+  }
+  .hack-re-card-text-cont {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10.16px;
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .hack-rew-cont {
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    padding: 50px 0 30px 0;
+  }
+  .hack-rew-inner-cont {
+    display: flex;
+    gap:60px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .hack-rew-head-cont {
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+  }
+  .hack-rew-head {
+    position: relative;
+    background: linear-gradient(90deg, #e3d34b 10.96%, #53e544 124.5%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: Archivo;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+  }
+  
+  .hack-rew-card-cont {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    border-radius: 29.611px;
+    padding: 30px;
+    border: 1px solid #E3D34B;
+    background: rgba(3, 31, 0, 0.96);
+    box-shadow: 12.3378px 3.29008px 4.93512px 0px #e3d34b;
+    width: 85%;
+    height:auto;
+    gap:20px;
+    flex-direction: column;
+  }
+  
+  .hack-re-card-left {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hack-re-card-left img {
+    width: 90%;
+    aspect-ratio: 1/1;
+  }
+  .hack-re-card-right {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap:20px;
+    /* padding:20px; */
+    flex-direction: column;
+     justify-content: space-evenly;
+     position: relative;
+    /*align-items: center; */
+  }
+  .hack-re-card-text-head {
+    color: #ffc530;
+    font-family: Archivo;
+    font-size: 34.239px;
+    width: 100%;
+    font-style: normal;
+    text-align: center;
+    font-weight: 500;
+    line-height: normal;
+  }
+  .hack-re-card-text {
+    width:100%;
+    color: #e2e2e2;
+    font-family: Archivo;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    line-height: 139.3%; /* 45.831px */
+  }
+  .hack-re-card-text-cont {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10.16px;
+    width: 95%;
+  }
+}
