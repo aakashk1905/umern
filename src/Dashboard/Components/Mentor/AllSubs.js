@@ -8,6 +8,7 @@ import Givefeedback from "./Givefeedback";
 import reset from "../../Assests/reset.png";
 
 import taskss from "../Tasks.json";
+import ViewFeedback from "../Tasks/ViewFeedback";
 const AllSubs = () => {
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState(Cookies.get("mentor_filter") || "");
@@ -19,6 +20,8 @@ const AllSubs = () => {
   const [showForgot, setShowForgot] = useState(false);
   const otpSent = Cookies.get("otp_sent") ? true : false;
   const [giveFeedBack, setGiveFeedBack] = useState(false);
+  const [viewFeedback, setViewFeedback] = useState(false);
+  const [feedback, setFeedback] = useState("");
   const [data, setData] = useState("");
 
   const fetchbyEmail = async () => {
@@ -81,6 +84,9 @@ const AllSubs = () => {
       {giveFeedBack && (
         <Givefeedback setGiveFeedBack={setGiveFeedBack} data={data} />
       )}
+      {viewFeedback && (
+        <ViewFeedback setViewFeedback={setViewFeedback} feedback={feedback} />
+      )}
 
       <div className="task-details-cont">
         <div className="tdc-header">
@@ -114,6 +120,7 @@ const AllSubs = () => {
               <div
                 className="search-cta"
                 onClick={() => {
+                  fetchbyEmail()
                   setFilter("Select Task");
                   Cookies.remove("mentor_filter");
                 }}
@@ -224,6 +231,25 @@ const AllSubs = () => {
                             }}
                           >
                             <div>Review</div>
+                          </div>
+                        )}
+                        {t.status !== "submitted" && (
+                          <div
+                            className="task-submit-btn"
+                            style={{ color: "#51B846" }}
+                            onClick={() => {
+                              const feed = {
+                                feedbackk: "feedback",
+                                feedback: t.feedback || "",
+                                task: t.taskLink,
+                                rejected: t.status === "rejected",
+                              };
+                              setData(t.nameid);
+                              setFeedback(feed);
+                              setViewFeedback(true);
+                            }}
+                          >
+                            <div>View Feedback </div>
                           </div>
                         )}
                       </div>
