@@ -18,8 +18,8 @@ import Challengess from "./Challenges.json";
 import level from "./Levels.json";
 import SubmitTask from "./Tasks/SubmitTask";
 import ViewFeedback from "./Tasks/ViewFeedback";
-const Tasks = ({ tasks, user, setSeeLeagues }) => {
-  const [switcher, setSwitcher] = useState(1);
+const Tasks = ({ tasks, user, setSeeLeagues, cort }) => {
+  const [switcher, setSwitcher] = useState(cort);
   const [submitTask, setSubmitTask] = useState(false);
   const [viewFeedback, setViewFeedback] = useState(false);
   const [feedback, setFeedback] = useState("");
@@ -95,19 +95,19 @@ const Tasks = ({ tasks, user, setSeeLeagues }) => {
       <div className="tasks-left-outer">
         <div className="task-switch">
           <div
-            className={`ts-tasks ${switcher === 1 && "task-act"}`}
-            onClick={() => setSwitcher(1)}
+            className={`ts-tasks ${!switcher && "task-act"}`}
+            onClick={() => setSwitcher(false)}
           >
             Tasks
           </div>
           <div
-            className={`ts-challanges ${switcher === 2 && "task-act"}`}
-            onClick={() => setSwitcher(2)}
+            className={`ts-challanges ${switcher && "task-act"}`}
+            onClick={() => setSwitcher(true)}
           >
             Challenges
           </div>
         </div>
-        {switcher === 1 && (
+        {!switcher && (
           <div className="tasks-left-cont">
             <div className="tasks-left-head">
               <img src={progressimg} alt="progressimg" />
@@ -669,9 +669,9 @@ const Tasks = ({ tasks, user, setSeeLeagues }) => {
             </div>
           </div>
         )}
-        {switcher === 2 && <div className="tasks-left-cont task-coming-soon">Coming Soon!!!</div>}
+        {/* {switcher === 2 && <div className="tasks-left-cont task-coming-soon">Coming Soon!!!</div>} */}
 
-        {/* {switcher === 2 && (
+        {switcher && (
           <div className="tasks-left-cont">
             <div className="tasks-left-head">
               <img src={progressimg} alt="progressimg" />
@@ -1232,7 +1232,7 @@ const Tasks = ({ tasks, user, setSeeLeagues }) => {
               </div>
             </div>
           </div>
-        )} */}
+        )}
       </div>
       <div className="tasks-right-cont">
         <div className="tr-top-cont">
@@ -1244,7 +1244,7 @@ const Tasks = ({ tasks, user, setSeeLeagues }) => {
             <div className="tr-mid">
               <div className="tr-mid-bronze-img">
                 <img
-                  src={levels[user?.userDetails.level]?.img || bronze}
+                  src={levels[user?.userDetails?.level]?.img || bronze}
                   alt="bronze"
                 />
               </div>

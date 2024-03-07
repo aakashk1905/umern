@@ -30,6 +30,7 @@ const Main1 = () => {
   const [active, setActive] = useState(1);
   const email = Cookies.get("user_email");
   const [seeLeagues, setSeeLeagues] = useState(false);
+  const [cort, setT] = useState(false);
   const { stage } = useParams();
 
   useEffect(() => {
@@ -41,7 +42,7 @@ const Main1 = () => {
     fetchData1();
     fetchLeaderBoard();
     if (stage) {
-      if (stage !== "stage" && stage !== "tasks") {
+      if (stage !== "stage" && stage !== "tasks" && stage !== "challenges") {
         // console.log(stage);
         window.location.href = `https://${window.location.hostname}/mern/dashboard`;
         return <h1> Not a Valid URL !!!!</h1>;
@@ -49,6 +50,9 @@ const Main1 = () => {
         if (Cookies.get("user_email"))
           window.location.href = `https://${window.location.hostname}/mern/campus/stage`;
       } else if (stage === "tasks") {
+        setActive(3);
+      } else if (stage === "challenges") {
+        setT(true);
         setActive(3);
       }
     }
@@ -197,6 +201,7 @@ const Main1 = () => {
                   tasks={tasks}
                   user={user}
                   setSeeLeagues={setSeeLeagues}
+                  cort={cort}
                 />
               </div>
             )}

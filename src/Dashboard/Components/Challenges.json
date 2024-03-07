@@ -2,16 +2,36 @@
   {
     "name": "Challange 1",
     "nameid": "challange1",
-    "points": 10
+    "points": 40
   },
   {
     "name": "Challange 2",
     "nameid": "challange2",
-    "points": 10
+    "points": 20
   },
   {
     "name": "Challange 3",
     "nameid": "challange3",
-    "points": 10
+    "points": 30
+  },
+  {
+    "name": "Challange 4",
+    "nameid": "challange4",
+    "points": 70
+  },
+  {
+    "name": "Challange 5",
+    "nameid": "challange5",
+    "points": 20
+  },
+  {
+    "name": "Challange 6",
+    "nameid": "challange6",
+    "points": 40
+  },
+  {
+    "name": "Challange 7",
+    "nameid": "challange7",
+    "points": 40
   }
 ]
