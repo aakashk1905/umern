@@ -68,11 +68,12 @@
   background: linear-gradient(91deg, #e3d34b 6%, #53e544 122.89%);
   box-shadow: 8px 8px 0px 0px #fff;
   display: flex;
-  width: 354.929px;
+  width: fit-content;
   height: 90.066px;
   transform: rotate(-5.781deg);
   padding: 20px 30px;
   justify-content: center;
+  text-align: center;
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
@@ -86,7 +87,6 @@
   transition: all 500ms ease-out;
 }
 
-
 .time-cta-btn::before {
   content: "";
   background: rgba(255, 255, 255, 0.4);
@@ -99,12 +99,12 @@
   transition: left 1000ms ease-out;
 }
 
-.time-cta-btn:hover{
+.time-cta-btn:hover {
   background: linear-gradient(91deg, #53e544 6%, #e3d34b 122.89%);
   box-shadow: -8px -8px 0px 0px #fff;
   /* transform: scale(1.1); */
 }
- .time-cta-btn:hover::before {
+.time-cta-btn:hover::before {
   left: 115%;
 }
 
@@ -133,7 +133,7 @@
   position: relative;
   width: 75%;
   height: auto;
-  padding:60px 0 120px 0;
+  padding: 60px 0 120px 0;
   flex-shrink: 0;
   border-radius: 13px;
   border: 1px solid #e3d34b;
@@ -195,9 +195,8 @@
 .t-day {
   position: absolute;
 
-  
-  background: #DFCD38;
-    display: flex;
+  background: #dfcd38;
+  display: flex;
   width: 40%;
   height: 75.262px;
   padding: 20px 10px;
@@ -216,7 +215,7 @@
   line-height: normal;
   border: none;
 }
-.timeline-d2{
+.timeline-d2 {
   display: none;
 }
 
@@ -224,8 +223,8 @@
   /* .timeline-d2{
     display: block;
   } */
-  .timeline-d3{
-    display: none !important; 
+  .timeline-d3 {
+    display: none !important;
   }
   .timeline-cont {
     height: auto;
@@ -253,7 +252,6 @@
     padding: 40px 0 40px 0;
     justify-content: center;
     align-items: center;
-    
   }
 
   .time-cta-text {
@@ -375,8 +373,8 @@
   .t-day {
     position: absolute;
 
-    background: #DFCD38;
-        display: flex;
+    background: #dfcd38;
+    display: flex;
     width: 50%;
     height: 75.262px;
     /* transform: rotate(-1deg); */
@@ -399,8 +397,8 @@
 }
 
 @media screen and (max-width: 350px) {
-  .timeline-d3{
-    display: none !important; 
+  .timeline-d3 {
+    display: none !important;
   }
   .timeline-cont {
     height: auto;
@@ -428,7 +426,6 @@
     padding: 40px 0 40px 0;
     justify-content: center;
     align-items: center;
-    
   }
 
   .time-cta-text {
@@ -549,8 +546,8 @@
   .t-day {
     position: absolute;
 
-    background: #DFCD38;
-        display: flex;
+    background: #dfcd38;
+    display: flex;
     width: 50%;
     height: 75.262px;
     /* transform: rotate(-1deg); */

@@ -14,8 +14,8 @@ const Hackfaq = () => {
             </div>
             <div className="h-faq-ans">
               <div className="h-faq-ans-text">
-                To join simple click on the “Register Now” button on this
-                website, and complete the registration form
+                To join simple click on the “Register Now For Free” button on
+                this website, and complete the registration form
               </div>
             </div>
           </div>
@@ -83,7 +83,7 @@ const Hackfaq = () => {
         <Faqq
           que={"How do I participate in Hackathon?"}
           text={
-            "To join simple click on the “Register Now” button on this website, and complete the registration form"
+            "To join simple click on the “Register Now For Free” button on this website, and complete the registration form"
           }
         />
         <Faqq

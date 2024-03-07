@@ -69,7 +69,7 @@ const Timeline = ({ setShowForm }) => (
         🚀 Ready to unleash your creative genius?{" "}
       </div>
       <div className="time-cta-btn" onClick={() => setShowForm(true)}>
-        Register Now
+        Register Now For Free
       </div>
       {/* <div className='time-cta-btn' onClick={()=>alert("Slots Full!!! Wait till Next Hackathon")}>Register Now</div> */}
     </div>

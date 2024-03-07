@@ -13,20 +13,20 @@ const Hackstart = ({ setShowForm }) => {
                         <div className='hack-get-st-card-num'>1</div>
                         <div className='hack-reg-now'>Register <br /><b style={{ color: '#e3d34b' }}>Your Team!</b></div>
                         <div className='hack-reg-text'>  You can Register in a team of 3-4 members, here.</div>
-                        <div className='hack-reg-btn' onClick={() => setShowForm(true)}>Register Now</div>
-                        {/* <div className='hack-reg-btn' onClick={() => alert("Slots Full!!! Wait till Next Hackathon")}>Register Now</div> */}
+                        <div className='hack-reg-btn' onClick={() => setShowForm(true)}>Register Now </div>
+                        {/* <div className='hack-reg-btn' onClick={() => alert("Slots Full!!! Wait till Next Hackathon")}>Register Now For Free</div> */}
                     </div>
                     <div className='hack-get-st-card'>
                         <div className='hack-get-st-card-num'>2</div>
                         <div className='hack-reg-now'>Join <br /><b style={{ color: '#e3d34b' }}>Upskillmafia Platform</b></div>
                         <div className='hack-reg-text'> Join our hackathon group with your team to get the live updates</div>
-                        {/* <div className='hack-reg-btn'>Register Now</div> */}
+                        {/* <div className='hack-reg-btn'>Register Now For Free</div> */}
                     </div>
                     <div className='hack-get-st-card'>
                         <div className='hack-get-st-card-num'>3</div>
                         <div className='hack-reg-now'>Submit <br /><b style={{ color: '#e3d34b' }}>Hackathon Task</b></div>
                         <div className='hack-reg-text'> Work along with your team and Submit the task on 10th March</div>
-                        {/* <div className='hack-reg-btn'>Register Now</div> */}
+                        {/* <div className='hack-reg-btn'>Register Now For Free</div> */}
                     </div>
                 </div>
             </div>
