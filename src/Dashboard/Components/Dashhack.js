@@ -107,8 +107,7 @@ const Dashhack = () => {
           </div>
           <div className="dh-left-card-btm">
             <div className="dh-ps-text">
-              Create a mobile app for upskill mafia which containw a community
-              forum and a social media platform for beg...
+              Develop a Full Stack app for two sports enthusiast pesrons who want to conne...
             </div>
             <a
               href={`https://${window.location.hostname}/mern/dashboard/hackathon-task`}
