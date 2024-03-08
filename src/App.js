@@ -16,6 +16,7 @@ import Cookies from "js-cookie";
 import MentorReview from "./Dashboard/Pages/MentorReview";
 import Hackathon from "./Pages/Hackathon";
 import Success from "./Pages/Success";
+import GoogleDocEmbed1 from "./Pages/GoogleDocEmbed1";
 
 function RedirectComponentMern() {
   const width = window.innerWidth;
@@ -136,6 +137,7 @@ function App() {
           <Route path="whatsapp" element={<RedirectComponent2whatsapp />} />
           <Route path="dashboard" element={<Main1 />} />
           <Route path="dashboard/mentor/review" element={<MentorReview />} />
+          <Route path="dashboard/hackathon-task" element={<GoogleDocEmbed1 />} />
           <Route path="dashboard/:stage" element={<Main1 />} />
           <Route path="hackathon" element={<Hackathon />} />
           <Route path="success" element={<Success />} />

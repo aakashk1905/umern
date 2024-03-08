@@ -42,7 +42,12 @@ const Main1 = () => {
     fetchData1();
     fetchLeaderBoard();
     if (stage) {
-      if (stage !== "stage" && stage !== "tasks" && stage !== "challenges") {
+      if (
+        stage !== "stage" &&
+        stage !== "tasks" &&
+        stage !== "challenges" &&
+        stage !== "hackathon"
+      ) {
         // console.log(stage);
         window.location.href = `https://${window.location.hostname}/mern/dashboard`;
         return <h1> Not a Valid URL !!!!</h1>;
@@ -54,6 +59,8 @@ const Main1 = () => {
       } else if (stage === "challenges") {
         setT(true);
         setActive(3);
+      } else if (stage === "hackathon") {
+        setActive(2);
       }
     }
   }, []);

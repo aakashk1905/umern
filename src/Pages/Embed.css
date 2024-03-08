@@ -1,0 +1,31 @@
+.react-pdf__Page__textContent.textLayer {
+  display: none;
+}
+.react-pdf__Page {
+  width: fit-content;
+}
+
+canvas.react-pdf__Page__canvas {
+  margin-bottom: 20px;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+.doc-cont {
+  width: fit-content;
+  min-width: 100vw;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.doc-title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: bisque;
+  font-size: 30px;
+  padding: 20px 0;
+}

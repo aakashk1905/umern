@@ -4,7 +4,7 @@ import aim from "../Assests/aim.png";
 import submit from "../Assests/submit.svg";
 import tips from "../Assests/tips.png";
 import leaderboard from "../Assests/leaderboard.png";
-// import wintr from "../Assests/wintr.png";
+import wintr from "../Assests/wintr.png";
 
 const Dashhack = () => {
   const [tip, setTips] = useState(false);
@@ -111,10 +111,10 @@ const Dashhack = () => {
               forum and a social media platform for beg...
             </div>
             <a
-              href="https://upskillmafia.com/hackathon-task"
+              href={`https://${window.location.hostname}/mern/dashboard/hackathon-task`}
               target="_blank"
               rel="noreferrer"
-              style={{ width: "100%" }}
+              style={{ width: "100%", margin: "0" }}
             >
               <div className="mc-join-cont" style={{ height: "65px" }}>
                 <span>View Problem Statement</span>
@@ -135,17 +135,17 @@ const Dashhack = () => {
             <div></div>
             <div className="dh-left-card-submit-cont">
               <div className="dh-sd-text">
-                Task <b style={{ color: "#FFCF33" }}>Submission Details </b>
+                Task <b style={{ color: "#FFCF33" }}>Submission Details</b>
               </div>
               <div className="dh-sd-det">
                 Submission Deadline:{" "}
-                <b className="dh-sd-det-text">24 Dec 10:00PM</b>
+                <b className="dh-sd-det-text">10 March 10:00PM</b>
               </div>
               <div
                 className="dt-sd-cta"
                 onClick={() => {
                   window.open(
-                    "https://docs.google.com/forms/d/e/1FAIpQLSelZEgK0A1cLamORtkgiuJ_gb0TH_kjiSaaH2BMrboTXe55iA/viewform",
+                    "https://docs.google.com/forms/d/e/1FAIpQLSf-weCk_SzsschS6V4V1MdSJa8jdCuInSuTe31YWMyWBR1aiQ/viewform",
                     "_blank"
                   );
                 }}
@@ -171,23 +171,23 @@ const Dashhack = () => {
               <li style={{ marginTop: "0" }}>
                 Understand the Challenge: Read the problem statement and rules
                 thoroughly. Define the problem you're solving and set time
-                limits for each task.
+                limits for each task. Divide the tasks efficiently.
               </li>
               <li>
                 Never underestimate the clock. Efficient time management is
                 crucial, so plan wisely.
               </li>
               <li>
-                Prioritize UI. Focus more on the ui part and try to complete the
-                app with at least the basic requirements.
+                Disscussion with teammates is important to help and motivate
+                each other
               </li>
               <li>
-                User-Centric Design: Ensure your design addresses their needs
-                and provides a seamless experience.
+                Prioritize Basic functionalities: Focus on completing the basic
+                version first then add further features in order to stand out.
               </li>
               <li>
-                Attention to Detail: Pay attention to small details. A polished
-                design with meticulous details can set your work apart.
+                Add Your Creativity : Make sure to stand out from the crowd use
+                all your creativity
               </li>
             </ol>
           </div>
@@ -202,17 +202,17 @@ const Dashhack = () => {
                 Hackathon <b style={{ color: "#1ABA5B" }}> Leaderboard</b>
               </span>
             </div>
-            <span>Dec 2023</span>
+            <span>March 2024</span>
           </div>
           <div className="dh-rc-ranks1">
-            {/* <img src={wintr} alt="winner" />
+            <img src={wintr} alt="winner" />
             <div className="dh-rc-ranks-text">
-              Results will be Published on
+              Results will be Published before
               <br />
-              <b style={{ color: "#fff" }}>28th Dec, 2023</b>
-            </div> */}
+              <b style={{ color: "#fff" }}>15th March, 2024</b>
+            </div>
 
-            <div className="win-head">
+            {/* <div className="win-head">
               <div className="num-cont">
                 <div className="rank-num win-sub-head">#</div>
                 <div className="win-team-name win-sub-head">Team Name</div>
@@ -250,11 +250,11 @@ const Dashhack = () => {
                   </div>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
 
-        <div className="dh-right-card-cont1">
+        {/* <div className="dh-right-card-cont1">
           <div className="dh-rc-tp-head-cont1">
             <div className="dh-rc-tp-head">
               <img src={leaderboard} alt="leaderboard" />
@@ -290,7 +290,7 @@ const Dashhack = () => {
               ))}
             </div>
           )}
-        </div>
+        </div> */}
       </div>
     </div>
   );
