@@ -16,7 +16,8 @@ const SubmitTask = ({ setSubmitTask, taskName }) => {
       return;
     }
     if (isgrp) {
-      if (!teamMembers || teamName) {
+      // console.log(teamMembers, teamName);
+      if (!teamMembers || !teamName) {
         alert("Please Enter Group details");
         setDisabled(false);
         return;
