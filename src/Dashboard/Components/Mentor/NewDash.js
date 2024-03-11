@@ -4,10 +4,39 @@ import Cookies from "js-cookie";
 import ForgotPass from "../User/ForgotPass";
 import Register from "../User/Register";
 import Login from "../User/Login";
-import Givefeedback from "./Givefeedback";
 import reset from "../../Assests/reset.png";
 
 import taskss from "../Tasks.json";
+
+function convertArrayOfJsonToCSV(jsonArray) {
+  console.log("jsonArray", jsonArray);
+  const csvContent = jsonArray.reduce((acc, curr) => {
+    const values = Object.values(curr).map((value) => {
+      if (typeof value === "string") {
+        // Escape double quotes and handle newlines
+        return `"${value.replace(/"/g, '""')}"`;
+      }
+      return value;
+    });
+    return acc + values.join(",") + "\n";
+  }, Object.keys(jsonArray[0]).join(",") + "\n");
+
+  return csvContent;
+}
+
+function exportToCSV(jsonArray, fileName) {
+  const csvContent = convertArrayOfJsonToCSV(jsonArray);
+  const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+  const link = document.createElement("a");
+  if (link.download !== undefined) {
+    const url = URL.createObjectURL(blob);
+    link.setAttribute("href", url);
+    link.setAttribute("download", fileName);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+}
 const NewDash = () => {
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState(Cookies.get("mentor_filter") || "");
@@ -18,8 +47,7 @@ const NewDash = () => {
   const [showSign, setShowSign] = useState(false);
   const [showForgot, setShowForgot] = useState(false);
   const otpSent = Cookies.get("otp_sent") ? true : false;
-  //   const [giveFeedBack, setGiveFeedBack] = useState(false);
-  //   const [data, setData] = useState("");
+
   function formatDateTimeString(timestamp) {
     const date = new Date(timestamp);
     const options = {
@@ -188,6 +216,12 @@ const NewDash = () => {
               <div style={{ color: "white" }}>
                 {" "}
                 Tasks Count: {filteredTasks?.length || 0}
+              </div>
+              <div
+                style={{ color: "white", cursor: "pointer" }}
+                onClick={() => exportToCSV(filteredTasks, filter)}
+              >
+                EXPORT
               </div>
             </div>
           </div>
