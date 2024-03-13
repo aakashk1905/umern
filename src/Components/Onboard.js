@@ -91,16 +91,16 @@ const Onboard = ({ setShowSign }) => {
       alert("Registered successfully!!");
       setDisabled(false);
 
-      Cookies.set("user_name", name);
-      Cookies.set("user_email", email);
+      Cookies.set("onboarded_user_name", name);
+      Cookies.set("onboarded_user_email", email);
       window.location.href = `https://${window.location.hostname}/onboard`;
     } else {
       alert("Something Went Wrong Please Try Again");
       setDisabled(false);
     }
 
-    Cookies.set("user_name", name);
-    Cookies.set("user_email", email);
+    Cookies.set("onboarded_user_name", name);
+    Cookies.set("onboarded_user_email", email);
     window.location.href = `https://${window.location.hostname}/onboard`;
   }
   return (
