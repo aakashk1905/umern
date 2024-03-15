@@ -30,7 +30,7 @@ function RedirectComponentMern() {
         const fetchData = async () => {
           try {
             const response = await fetch(
-              `https://api.upskillmafia.com/api/v1/user/update-streak?email=${email}`,
+              `${process.env.REACT_APP_API_URL}/user/update-streak?email=${email}`,
               {
                 method: "POST",
                 headers: {
@@ -41,8 +41,11 @@ function RedirectComponentMern() {
             const data = await response.json();
 
             if (data.success) {
-              window.location.href =
-                "https://cosmos.video/v/5dvm-syhq-p15w/office";
+              if (room)
+                window.location.href = `https://cosmos.video/v/5dvm-syhq-p15w/office/r/${room}`;
+              else
+                window.location.href =
+                  "https://cosmos.video/v/5dvm-syhq-p15w/office";
             }
           } catch (error) {
             alert("something went wrong....Please try again!!!");
@@ -53,7 +56,7 @@ function RedirectComponentMern() {
         window.location.href = `https://${window.location.hostname}/mern/dashboard`;
       }
     }
-  }, [width]);
+  }, [width, room]);
 
   if (width < 800) {
     return (
@@ -85,7 +88,7 @@ function RedirectComponent2Mern() {
         const fetchData = async () => {
           try {
             const response = await fetch(
-              `https://api.upskillmafia.com/api/v1/user/update-streak?email=${email}`,
+              `${process.env.REACT_APP_API_URL}/user/update-streak?email=${email}`,
               {
                 method: "POST",
                 headers: {
@@ -137,7 +140,10 @@ function App() {
           <Route path="whatsapp" element={<RedirectComponent2whatsapp />} />
           <Route path="dashboard" element={<Main1 />} />
           <Route path="dashboard/mentor/review" element={<MentorReview />} />
-          <Route path="dashboard/hackathon-task" element={<GoogleDocEmbed1 />} />
+          <Route
+            path="dashboard/hackathon-task"
+            element={<GoogleDocEmbed1 />}
+          />
           <Route path="dashboard/:stage" element={<Main1 />} />
           <Route path="hackathon" element={<Hackathon />} />
           <Route path="success" element={<Success />} />

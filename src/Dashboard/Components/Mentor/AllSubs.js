@@ -28,7 +28,7 @@ const AllSubs = () => {
     setTasksLoading(true);
     try {
       const response = await fetch(
-        `https://api.upskillmafia.com/api/v1/submissions/get?email=${search}`
+        `${process.env.REACT_APP_API_URL}/submissions/get?email=${search}`
       );
       if (!response.ok) {
         throw new Error("Network response was not ok");

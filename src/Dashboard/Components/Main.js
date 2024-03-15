@@ -68,7 +68,7 @@ const Main1 = () => {
     setTasksLoading(true);
     try {
       const response = await fetch(
-        `https://api.upskillmafia.com/api/v1/user/leaderboard?email=${email}`
+        `${process.env.REACT_APP_API_URL}/user/leaderboard?email=${email}`
       );
       if (!response.ok) {
         throw new Error("Network response was not ok");
@@ -89,7 +89,7 @@ const Main1 = () => {
     setTasksLoading(true);
     try {
       const response = await fetch(
-        `https://api.upskillmafia.com/api/v1/user/getuser?email=${email}`
+        `${process.env.REACT_APP_API_URL}/user/getuser?email=${email}`
       );
       if (!response.ok) {
         throw new Error("Network response was not ok");
@@ -107,7 +107,7 @@ const Main1 = () => {
     setTasksLoading(true);
     try {
       const response = await fetch(
-        `https://api.upskillmafia.com/api/v1/submissions/get?email=${email}`
+        `${process.env.REACT_APP_API_URL}/submissions/get?email=${email}`
       );
       if (!response.ok) {
         throw new Error("Network response was not ok");

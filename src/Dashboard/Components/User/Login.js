@@ -18,7 +18,7 @@ const Login = ({ setShowLogin, setShowSign, setShowForgot }) => {
     if (event) event.preventDefault();
 
     const response = await fetch(
-      "https://api.upskillmafia.com/api/v1/user/login",
+      `${process.env.REACT_APP_API_URL}/user/login`,
       {
         method: "POST",
         headers: {

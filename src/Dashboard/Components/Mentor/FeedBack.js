@@ -25,7 +25,7 @@ const FeedBack = () => {
     setTasksLoading(true);
     try {
       const response = await fetch(
-        `https://api.upskillmafia.com/api/v1/submissions/pending?email=${search}`
+        `${process.env.REACT_APP_API_URL}/submissions/pending?email=${search}`
       );
       if (!response.ok) {
         throw new Error("Network response was not ok");
@@ -51,7 +51,7 @@ const FeedBack = () => {
     setTasksLoading(true);
     try {
       const response = await fetch(
-        `https://api.upskillmafia.com/api/v1/submissions`
+        `${process.env.REACT_APP_API_URL}/submissions`
       );
       if (!response.ok) {
         throw new Error("Network response was not ok");

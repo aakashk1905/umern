@@ -29,7 +29,7 @@ const Register = ({ setShowSign, setShowLogin }) => {
       return;
     }
     try {
-      var url = `https://api.upskillmafia.com/api/v1/user/regotp?number=${mobile}`;
+      var url = `${process.env.REACT_APP_API_URL}/user/regotp?number=${mobile}`;
 
       const response = await fetch(url, {
         method: "POST",
@@ -64,6 +64,14 @@ const Register = ({ setShowSign, setShowLogin }) => {
 
   async function registerUser(event) {
     event.preventDefault();
+    if (!email || !mobile || !password || !name) {
+      alert("Please Enter All Details!!!");
+      return;
+    }
+    if (password.lenght < 6) {
+      alert("Password must be at least 6 characters");
+      return;
+    }
     setDisabled(true);
     const data = {
       email,
@@ -87,7 +95,7 @@ const Register = ({ setShowSign, setShowLogin }) => {
       }
 
       const response = await fetch(
-        "https://api.upskillmafia.com/api/v1/user/register",
+        `${process.env.REACT_APP_API_URL}/user/register`,
         {
           method: "POST",
           headers: {

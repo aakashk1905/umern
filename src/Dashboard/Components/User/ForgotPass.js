@@ -25,7 +25,7 @@ const ForgotPass = ({ setShowLogin, otpsent, setShowForgot }) => {
     }
     try {
       const response = await fetch(
-        `https://api.upskillmafia.com/api/v1/user/forgot?number=${number}`,
+        `${process.env.REACT_APP_API_URL}/user/forgot?number=${number}`,
         {
           method: "POST",
           headers: {
@@ -77,7 +77,7 @@ const ForgotPass = ({ setShowLogin, otpsent, setShowForgot }) => {
 
     try {
       const response = await fetch(
-        `https://api.upskillmafia.com/api/v1/user/reset`,
+        `${process.env.REACT_APP_API_URL}/user/reset`,
         {
           method: "POST",
           headers: {

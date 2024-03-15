@@ -17,7 +17,7 @@ const MentorReview = () => {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        `https://api.upskillmafia.com/api/v1/user/getuser?email=${email}`
+        `${process.env.REACT_APP_API_URL}/user/getuser?email=${email}`
       );
       if (!response.ok) {
         throw new Error("Network response was not ok");

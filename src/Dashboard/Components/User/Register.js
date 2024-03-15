@@ -17,18 +17,30 @@ const Register = ({ setShowSign, setShowLogin, setShowRedirect }) => {
   async function registerUser(event) {
     event.preventDefault();
 
-    const response = await fetch("https://api.upskillmafia.com/api/v1/user/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name,
-        email,
-        password,
-        mobile,
-      }),
-    });
+    if (!email || !password || !mobile || !name) {
+      alert("Please Enter All Details!!!");
+      return;
+    }
+    if (password.length < 6) {
+      alert("Password must be at least 6 characters");
+      return;
+    }
+
+    const response = await fetch(
+      `${process.env.REACT_APP_API_URL}/user/register`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          password,
+          mobile,
+        }),
+      }
+    );
 
     const data = await response.json();
 

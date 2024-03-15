@@ -15,7 +15,7 @@ const Givefeedback = ({ setGiveFeedBack, data }) => {
 
     if (data.teamMembers.length > 0) {
       response = await fetch(
-        "https://api.upskillmafia.com/api/v1/mentor/feedback",
+        `${process.env.REACT_APP_API_URL}/mentor/feedback`,
         {
           method: "POST",
           headers: {
@@ -32,7 +32,7 @@ const Givefeedback = ({ setGiveFeedBack, data }) => {
       );
     } else {
       response = await fetch(
-        "https://api.upskillmafia.com/api/v1/mentor/feedback",
+        `${process.env.REACT_APP_API_URL}/mentor/feedback`,
         {
           method: "POST",
           headers: {

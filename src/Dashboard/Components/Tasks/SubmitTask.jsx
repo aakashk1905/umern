@@ -23,7 +23,7 @@ const SubmitTask = ({ setSubmitTask, taskName }) => {
         return;
       }
       response = await fetch(
-        "https://api.upskillmafia.com/api/v1/task/submit",
+        `${process.env.REACT_APP_API_URL}/task/submit`,
         {
           method: "POST",
           headers: {
@@ -40,7 +40,7 @@ const SubmitTask = ({ setSubmitTask, taskName }) => {
       );
     } else {
       response = await fetch(
-        "https://api.upskillmafia.com/api/v1/task/submit",
+        `${process.env.REACT_APP_API_URL}/task/submit`,
         {
           method: "POST",
           headers: {
