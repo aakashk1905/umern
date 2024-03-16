@@ -38,6 +38,16 @@ function RedirectComponentMern() {
                 },
               }
             );
+
+            await fetch(
+              `${process.env.REACT_APP_API_URL}/user/lastlogin?email=${email}`,
+              {
+                method: "PUT",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+              }
+            );
             const data = await response.json();
 
             if (data.success) {
@@ -91,6 +101,15 @@ function RedirectComponent2Mern() {
               `${process.env.REACT_APP_API_URL}/user/update-streak?email=${email}`,
               {
                 method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+              }
+            );
+            await fetch(
+              `${process.env.REACT_APP_API_URL}/user/lastlogin?email=${email}`,
+              {
+                method: "PUT",
                 headers: {
                   "Content-Type": "application/json",
                 },

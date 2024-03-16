@@ -40,6 +40,7 @@ const Main1 = () => {
     }
     fetchData();
     fetchData1();
+    updatelogin();
     fetchLeaderBoard();
     if (stage) {
       if (
@@ -64,6 +65,22 @@ const Main1 = () => {
       }
     }
   }, []);
+
+  const updatelogin = async () => {
+    try {
+      await fetch(
+        `${process.env.REACT_APP_API_URL}/user/lastlogin?email=${email}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+    } catch (e) {
+      console.log("e", e);
+    }
+  };
   const fetchLeaderBoard = async () => {
     setTasksLoading(true);
     try {
