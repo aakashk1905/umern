@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./ms.css";
 import logo from "../../Assests/logo.png";
 import close from "../../Assests/close.svg";
-import { updateEvent } from "./InviteCalander";
+// import { updateEvent } from "./InviteCalander";
 
 const MultiStepForm = ({ setShowForm }) => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -66,7 +66,7 @@ const MultiStepForm = ({ setShowForm }) => {
       if (response.status === 201) {
         for (const t of teamMembers) {
           try {
-            await updateEvent(t.email);
+            // await updateEvent(t.email);
             await sendNewUser(t.number, teamName);
           } catch (err) {
             console.error(err);
