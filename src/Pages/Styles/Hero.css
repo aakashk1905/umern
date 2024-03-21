@@ -47,7 +47,6 @@
   cursor: pointer;
   width: 35vw;
 }
-
 .hero-whatsapp::before {
   content: "";
   background: rgba(255, 255, 255, 0.25);
