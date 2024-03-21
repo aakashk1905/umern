@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./ms.css";
 import logo from "../../Assests/logo.png";
 import close from "../../Assests/close.svg";
+import { updateEvent } from "./InviteCalander";
 
 const MultiStepForm = ({ setShowForm }) => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -26,9 +27,12 @@ const MultiStepForm = ({ setShowForm }) => {
             phoneNumber: number,
             type: "Template",
             template: {
-              name: "umhack1",
+              name: "umhack2",
               languageCode: "en",
               bodyValues: [teamName],
+              buttonValues: {
+                1: ["J2TZ6scCKbe9UtNQJoRCfI"],
+              },
             },
           }),
         }
@@ -60,13 +64,14 @@ const MultiStepForm = ({ setShowForm }) => {
       );
 
       if (response.status === 201) {
-        teamMembers.forEach(async (t) => {
+        for (const t of teamMembers) {
           try {
+            await updateEvent(t.email);
             await sendNewUser(t.number, teamName);
           } catch (err) {
             console.error(err);
           }
-        });
+        }
         alert("Registered successfully");
 
         window.location.href = `https://${window.location.hostname}/mern/success`;
@@ -100,7 +105,7 @@ const MultiStepForm = ({ setShowForm }) => {
 
   const handleNext = () => {
     if (currentStep === 1) {
-      if (teamName && numMembers > 2 && numMembers <= 4) {
+      if (teamName && numMembers > 2 && numMembers <= 5) {
         setCurrentStep(currentStep + 1);
       } else {
         setTeamValidation(false);
@@ -164,7 +169,7 @@ const MultiStepForm = ({ setShowForm }) => {
       <div className="form-cont">
         <div className="form-reg-head">Registration Form</div>
         <div className="form-reg-head1">
-          (Its recommended to have 4 members it will inrease your chances of
+          (Its recommended to have 5 members it will inrease your chances of
           winning)
         </div>
         {currentStep === 1 && (
@@ -184,8 +189,8 @@ const MultiStepForm = ({ setShowForm }) => {
               <input
                 type="number"
                 min={3}
-                max={4}
-                placeholder="Team Members limit 3 - 4 "
+                max={5}
+                placeholder="Team Members limit 3 - 5 "
                 name="numMembers"
                 value={numMembers}
                 onChange={handleInputChange}
@@ -199,7 +204,7 @@ const MultiStepForm = ({ setShowForm }) => {
                   alignSelf: "center",
                 }}
               >
-                Enter Required Fields / Team members between 2-4
+                Enter Required Fields / Team members between 3-5
               </p>
             )}
             <button type="button" onClick={handleNext}>

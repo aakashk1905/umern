@@ -9,58 +9,56 @@ const Timeline = ({ setShowForm }) => (
     <div className="timeline-cards-cont">
       <div className="timeline-cards-left">
         <Event
-          day={"DAY 1 & 2"}
+          day={"DAY 1"}
           title={"Get Set Go!"}
           description={
-            "Launching ceremony of WEB Dev Hackathon,Brainstorm with your team & work on solution."
+            "Lauch of hackathon in different time slots( Onboarding session + dashboard introduction)"
           }
-          date={"08th-09th Mar @7:00 PM"}
+          date={"30th April 2024"}
         />
         <Event
-          day={"Day 3"}
+          day={"Day 2"}
           title={"Crunch time!"}
           description={
-            " Submit your Work as the Hackathon comes to an epic close."
+            "Launch of problem statement on Upskill Mafia Web development dashboard"
           }
-          date={"10th Mar - 10:00 PM"}
+          date={"31st Mar - 11:00 AM"}
           classname={"timeline-d2"}
         />
         <Event
-          day={"Day 4"}
+          day={"Day 2 - 8"}
           classname={"timeline-d3"}
-          title={"Project Building Session!"}
+          title={"The Journey!"}
           description={
-            "Boost Resume and ace project building in our Live Session."
+            "You can use this campus for solving the hackathon problem statement with your team"
           }
-          date={"Date-To Be Announced"}
+          date={"31st mar - 06 Apr"}
         />
       </div>
       <div className="timeline-cards-right">
         <Event
-          day={"Day 4"}
+          day={"Day 2-8"}
           classname={"timeline-d2"}
-          title={"Project Building Session!"}
+          title={"The Journey!"}
           description={
-            "Boost Resume and ace project building in our Live Session."
+            "You can use this campus for solving the hackathon problem statement with your team"
           }
-          date={" Date-To Be Announced"}
+          date={" 31st mar - 06 Apr"}
         />
         <Event
-          day={"Day 3"}
+          day={"Day 2"}
           classname={"timeline-d3"}
           title={"Crunch time!"}
           description={
             "Submit your Work as the Hackathon comes to an epic close."
           }
-          date={"10th Mar - 10:00 PM"}
+          date={"31st Mar - 11:00 AM"}
         />
         <Event
-          day={"Day 5"}
-          title={"Final reveal!!"}
-          description={
-            "Winners will be unvieled after  a live session by mentor and thier masterpieces will shine on our  official “Upskill mafia”  IG page."
-          }
-          date={"Date-To Be Announced"}
+          day={"Day 8"}
+          title={"Submission Time!!"}
+          description={"Hurry up  Submit your solutions on dashboard"}
+          date={"06-April 10:00 PM"}
         />
       </div>
     </div>

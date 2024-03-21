@@ -4,7 +4,8 @@ import hacklogo from "../../Assests/hacklogo.png";
 import hackstar from "../../Assests/hackstar.png";
 import hackcal from "../../Assests/hackcal.png";
 import hackgrp from "../../Assests/hackgrp.png";
-import hackheroleft from "../../Assests/HackHeroImg1.png";
+// import hackheroleft from "../../Assests/HackHeroImg1.png";
+import hackheroleft from "../../Assests/HackHeroMarathon.png";
 const HackHero = ({ setShowForm }) => {
   return (
     <div className="hack-hero-cont">
@@ -28,8 +29,7 @@ const HackHero = ({ setShowForm }) => {
             <div className="hack-cal-cont">
               <div className="date-hack">
                 <span>
-                  08th - 10th <br />
-                  March
+                  30th Mar -<br /> 06th Apr
                 </span>
                 <img className="hackcal" src={hackcal} alt="star" />
               </div>
